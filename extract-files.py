@@ -219,17 +219,6 @@ blob_fixups: blob_fixups_user_type = {
             'libtinyxml2.so',
             'libtinyxml2-v34.so'
         ),
-    (
-       'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
-    ): blob_fixup()
-        .replace_needed(
-            'vendor.qti.hardware.display.composer3-V1-ndk.so',
-            'vendor.qti.hardware.display.composer3-V3-ndk.so'
-        )
-        .replace_needed(
-            'libtinyxml2.so',
-            'libtinyxml2-v34.so'
-        ),
     'vendor/bin/system_dlkm_modprobe.sh': blob_fixup()
         .regex_replace(
             r'for kernel_ver_dir in \$\{system_dlkm_dir\}/\*;',
@@ -272,7 +261,6 @@ blob_fixups: blob_fixups_user_type = {
        'vendor/lib64/libpowercallback.so',
        'vendor/lib64/libpowercore.so',
        'vendor/lib64/libpsmoptfeature.so',
-       'vendor/lib64/libsdmclient.so',
        'vendor/lib64/libstandbyfeature.so',
        'vendor/lib64/libvideooptfeature.so',
      ): blob_fixup()

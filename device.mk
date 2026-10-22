@@ -176,12 +176,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.location.gps.xml
 
-# Graphics: gralloc, the mapper, the allocator and the display helper
-# libraries build from hardware/qcom-caf/sm8750/display with the ABI the stock
-# composer links. snapalloc builds from source too: the stock one links the
-# same libraries and loads the same Adreno, camera and memory helpers with
-# dlopen. libdisplaydebug, libdrmutils, libfilefinder and libgpu_tonemapper
-# stay stock.
+# Graphics: build the composer and its coupled display-core libraries from
+# CAF, with snapalloc. Color, calibration and Xiaomi display extensions stay
+# stock.
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     libdisplayconfig.qti \
@@ -192,8 +189,17 @@ PRODUCT_PACKAGES += \
     libqservice \
     mapper.qti \
     vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.config-V12-ndk.vendor \
     vendor.qti.hardware.display.demura-service \
+    libdisplaydebug \
+    libdrmutils \
+    libgpu_tonemapper \
+    libsdmclient \
+    libsdmcore \
+    libsdmdal \
+    libsdmutils \
+    libsdedrm \
     vendor.qti.hardware.display.snapalloc-impl
 
 PRODUCT_COPY_FILES += \
