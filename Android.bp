@@ -31,20 +31,7 @@ install_symlink {
 }
 
 mkdir {
-    name: "vendor_modem_firmware_mountpoint",
-    dir: "modem_firmware",
-    vendor: true,
-}
-
-mkdir {
     name: "product_vm-system_mountpoint",
     dir: "vm-system",
     product_specific: true,
-}
-
-install_symlink {
-    name: "rfs_msm_mpss_readonly_mbnconfig_symlink",
-    vendor: true,
-    installed_location: "rfs/msm/mpss/readonly/mbnconfig",
-    symlink_target: "/data/vendor/mbnconfig",
 }

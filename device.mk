@@ -43,10 +43,6 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# ANT+
-PRODUCT_PACKAGES += \
-    com.dsi.ant@1.0.vendor
-
 # Audio
 PRODUCT_PACKAGES += \
     audioadsprpcd \
@@ -321,15 +317,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Mountpoints
-$(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
-
 PRODUCT_PACKAGES += \
     product_vm-system_mountpoint \
-    rfs_msm_mpss_readonly_mbnconfig_symlink \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint \
-    vendor_modem_firmware_mountpoint \
     vendor_vm-system_mountpoint
 
 # Network
