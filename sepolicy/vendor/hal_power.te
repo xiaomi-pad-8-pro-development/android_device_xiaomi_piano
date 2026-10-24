@@ -1,3 +1,20 @@
-allow hal_power_default touchfeature_device:chr_file rw_file_perms;
-allow hal_power_default touchfeature_device:file { getattr map read };
 allow hal_power_default sysfs_tap_to_wake:file rw_file_perms;
+
+# libperfmgr writes the nodes listed in powerhint.json.
+allow hal_power_default proc_walt:dir search;
+allow hal_power_default proc_walt:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:dir search;
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+allow hal_power_default vendor_sysfs_msm_perf:dir search;
+allow hal_power_default vendor_sysfs_msm_perf:file rw_file_perms;
+allow hal_power_default vendor_sysfs_kgsl:dir search;
+allow hal_power_default vendor_sysfs_kgsl:file rw_file_perms;
+allow hal_power_default vendor_sysfs_kgsl:lnk_file read;
+
+# ADPF
+typeattribute hal_power_default mlstrustedsubject;
+allow hal_power_default self:capability sys_nice;
+allow hal_power_default appdomain:process { getsched setsched };
+allow hal_power_default surfaceflinger:process setsched;
+allow hal_power_default hal_graphics_composer_default:process setsched;
+allow hal_power_default system_server:process setsched;

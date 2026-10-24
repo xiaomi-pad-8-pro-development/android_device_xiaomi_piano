@@ -64,3 +64,7 @@ type vendor_data_touchreport_file, data_file_type, file_type;
 
 # Wlan
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
+
+# WALT tunables, written by the boot scripts, perf HAL, thermal daemon and
+# libperfmgr.
+type proc_walt, fs_type, proc_type;

@@ -156,6 +156,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
 # Sepolicy
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/system_ext/public

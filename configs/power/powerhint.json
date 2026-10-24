@@ -1,0 +1,328 @@
+{
+    "Nodes": [
+        {
+            "Name": "CPULittleAdaptiveHighFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy0/walt/adaptive_high_freq",
+            "Values": [
+                "1300000",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigAdaptiveHighFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy6/walt/adaptive_high_freq",
+            "Values": [
+                "1300000",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPULittleAdaptiveLowFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy0/walt/adaptive_low_freq",
+            "Values": [
+                "600000",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigAdaptiveLowFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy6/walt/adaptive_low_freq",
+            "Values": [
+                "800000",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "SchedBoost",
+            "Path": "/proc/sys/walt/sched_boost",
+            "Values": [
+                "5",
+                "2",
+                "0"
+            ],
+            "DefaultIndex": 2,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "SchedBusyHystEnableCpus",
+            "Path": "/proc/sys/walt/sched_busy_hysteresis_enable_cpus",
+            "Values": [
+                "255",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "SchedMinTaskUtilForBoost",
+            "Path": "/proc/sys/walt/sched_min_task_util_for_boost",
+            "Values": [
+                "0",
+                "35"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "SchedMinTaskUtilForColocation",
+            "Path": "/proc/sys/walt/sched_min_task_util_for_colocation",
+            "Values": [
+                "0",
+                "25"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPULittleCoreCtlMinCpus",
+            "Path": "/sys/devices/system/cpu/cpu0/core_ctl/min_cpus",
+            "Values": [
+                "6",
+                "4"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigCoreCtlMinCpus",
+            "Path": "/sys/devices/system/cpu/cpu6/core_ctl/min_cpus",
+            "Values": [
+                "2",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUMinFreq",
+            "Path": "/sys/kernel/msm_performance/parameters/cpu_min_freq",
+            "Values": [
+                "0:2745600 1:2745600 2:2745600 3:2745600 4:2745600 5:2745600 6:4089600 7:4089600",
+                "0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": false
+        },
+        {
+            "Name": "LLCCGoldMinFreq",
+            "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/240b3400.qcom,bwmon-llcc-gold/min_freq",
+            "Values": [
+                "1211000",
+                "350000"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "LLCCPrimeMinFreq",
+            "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/240b7400.qcom,bwmon-llcc-prime/min_freq",
+            "Values": [
+                "1211000",
+                "350000"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "LLCCGoldMaxFreq",
+            "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/240b3400.qcom,bwmon-llcc-gold/max_freq",
+            "Values": [
+                "1211000",
+                "806000"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "LLCCPrimeMaxFreq",
+            "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/240b7400.qcom,bwmon-llcc-prime/max_freq",
+            "Values": [
+                "1211000",
+                "806000"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "DDRGoldMinFreq",
+            "Path": "/sys/devices/system/cpu/bus_dcvs/DDR/soc:qcom,memlat:ddr:gold/min_freq",
+            "Values": [
+                "4761000",
+                "547000"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "GPUMinPwrLevel",
+            "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
+            "Values": [
+                "9",
+                "12"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "TapToWake",
+            "Path": "/sys/class/touch/touch_dev/double_tap",
+            "Values": [
+                "1",
+                "0"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": false
+        }
+    ],
+    "Actions": [
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleAdaptiveHighFreq",
+            "Value": "1300000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigAdaptiveHighFreq",
+            "Value": "1300000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleAdaptiveLowFreq",
+            "Value": "600000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigAdaptiveLowFreq",
+            "Value": "800000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "SchedBoost",
+            "Value": "2",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "SchedBusyHystEnableCpus",
+            "Value": "255",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "SchedMinTaskUtilForBoost",
+            "Value": "0",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "SchedMinTaskUtilForColocation",
+            "Value": "0",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleCoreCtlMinCpus",
+            "Value": "6",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigCoreCtlMinCpus",
+            "Value": "2",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "SchedBoost",
+            "Value": "5",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUMinFreq",
+            "Value": "0:2745600 1:2745600 2:2745600 3:2745600 4:2745600 5:2745600 6:4089600 7:4089600",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LLCCGoldMinFreq",
+            "Value": "1211000",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LLCCPrimeMinFreq",
+            "Value": "1211000",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LLCCGoldMaxFreq",
+            "Value": "1211000",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LLCCPrimeMaxFreq",
+            "Value": "1211000",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "DDRGoldMinFreq",
+            "Value": "4761000",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUMinPwrLevel",
+            "Value": "9",
+            "Duration": 1500
+        },
+        {
+            "PowerHint": "DOUBLE_TAP_TO_WAKE",
+            "Node": "TapToWake",
+            "Value": "1",
+            "Duration": 0
+        }
+    ],
+    "AdpfConfig": [
+        {
+            "Name": "ADPF_DEFAULT",
+            "PID_On": true,
+            "PID_Po": 2.0,
+            "PID_Pu": 0.6,
+            "PID_I": 0.001,
+            "PID_I_Init": 200,
+            "PID_I_High": 512,
+            "PID_I_Low": -30,
+            "PID_Do": 500.0,
+            "PID_Du": 0.0,
+            "SamplingWindow_P": 1,
+            "SamplingWindow_I": 0,
+            "SamplingWindow_D": 1,
+            "UclampMin_On": true,
+            "UclampMin_Init": 100,
+            "UclampMin_LoadUp": 384,
+            "UclampMin_LoadReset": 384,
+            "UclampMin_High": 512,
+            "UclampMin_Low": 0,
+            "ReportingRateLimitNs": 16666666,
+            "TargetTimeFactor": 1.0,
+            "StaleTimeFactor": 10.0,
+            "GpuBoost": false
+        }
+    ]
+}
