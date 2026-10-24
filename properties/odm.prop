@@ -75,6 +75,7 @@ vendor.display.disable_sdr_dimming=0
 vendor.display.disable_stc_dimming=1
 vendor.display.enable_hdr10_gpu_target=0
 vendor.display.force_tonemapping=1
+vendor.display.support_function_timer=1
 vendor.display.use_layer_ext=0
 
 # Displayfeature
