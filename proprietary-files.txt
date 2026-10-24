@@ -771,29 +771,13 @@ vendor/lib64/vendor.qti.ims.uceaidlservice-V1-ndk.so|b9a20daae5f48150c1485d75ab1
 vendor/lib64/vendor.qti.diaghal-V1-ndk.so;MODULE_SUFFIX=-vendor|346712dc40cfed49c6197139fb7e281239b7274f
 
 # Init
-vendor/bin/init.class_main.sh|0bfd70847f1aead7871f24bd397e8651d25c77aa
-vendor/bin/init.qcom.class_core.sh|543cc97ccf4ba1ae04e2ce85f2afc24fe1b79e1f
-vendor/bin/init.qcom.early_boot.sh|c460acfac4753cdcf3739642780f57c5ebe4e4c4
-vendor/bin/init.qcom.post_boot.sh|69d87b49aefbddd91cb89a7434f99185fa8f03e7
-vendor/bin/init.qcom.sh|c84bb68758ba09002b4aa4da0984a1aae5534ef8
 
 # IR
 odm/lib64/hw/consumerir.qcom.so|ced3a5193c81769c23deed853b15d8a4a3d1fe85
 
 # Kernel
-vendor/bin/init.kernel.extra_free_kbytes.sh|df9b2b51f9515ae464ef052125cffdd4b8125ed6
-vendor/bin/init.kernel.init_boot-memory.sh|49a78b8f01b69311638b210fa5fc3a982e731411
-vendor/bin/init.kernel.post_boot-memory.sh|190448aa85e37b114938e4f683a53cf6f8267899
-vendor/bin/init.kernel.post_boot.sh|afef19e8767f25b2c0aecbec1e08505a7c43f8d1
-vendor/bin/init.kernel.post_boot-sun_5_2.sh|b8d746db33bbf86d03c56980952071a810339031
-vendor/bin/init.kernel.post_boot-sun_6_0.sh|5287bc6c57bf973a280b3e1535470a10d2c7ca69
-vendor/bin/init.kernel.post_boot-sun_default_6_2.sh|d26f02b6e148976c0d53f09ff2438715d5ccac4c
-vendor/bin/init.kernel.post_boot-sun.sh|85dad5a2c521a3529928be42c9c011cbf52073c2
-vendor/bin/init.qti.kernel.sh|6c4fba16389256d99ed7850a902baa82cbfa0e56
 vendor/bin/system_dlkm_modprobe.sh|8eae15a0da114b1365f1356a981e6736d3ec9a43|196a3aa49d51a4a0380c7c31edaf717c866e6a8e
 vendor/bin/vendor_modprobe.sh|a6d743f391f5512234529e928a8dc000da5ac267
-vendor/etc/init/hw/init.qti.kernel.rc|29b96b6bf2cdb2b8189eede34dbd0a7024799743
-vendor/etc/init/hw/init.qti.kernel.target.rc|6368979b9a857c6c3c1c61dc67bd5006bea0dfc6
 
 # Keymaster
 vendor/lib64/libkeymasterdeviceutils.so|c5d86e963dbc3e7ed601cc80418d7b096afc1f8f

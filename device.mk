@@ -225,10 +225,26 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.class_main.sh \
+    init.kernel.extra_free_kbytes.sh \
+    init.kernel.init_boot-memory.sh \
+    init.kernel.post_boot-memory.sh \
+    init.kernel.post_boot-sun.sh \
+    init.kernel.post_boot-sun_5_2.sh \
+    init.kernel.post_boot-sun_6_0.sh \
+    init.kernel.post_boot-sun_default_6_2.sh \
+    init.kernel.post_boot.sh \
     init.piano.audio.rc \
     init.piano.rc \
     init.piano.wallpaper.rc \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
     init.qcom.rc \
+    init.qcom.sh \
+    init.qti.kernel.rc \
+    init.qti.kernel.sh \
+    init.qti.kernel.target.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     init.xiaomi.rc \

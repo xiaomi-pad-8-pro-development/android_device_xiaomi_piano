@@ -70,3 +70,101 @@ prebuilt_etc {
     src: "etc/ueventd.qcom.rc",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.extra_free_kbytes.sh",
+    src: "bin/init.kernel.extra_free_kbytes.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.init_boot-memory.sh",
+    src: "bin/init.kernel.init_boot-memory.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot.sh",
+    src: "bin/init.kernel.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-memory.sh",
+    src: "bin/init.kernel.post_boot-memory.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-sun.sh",
+    src: "bin/init.kernel.post_boot-sun.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-sun_5_2.sh",
+    src: "bin/init.kernel.post_boot-sun_5_2.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-sun_6_0.sh",
+    src: "bin/init.kernel.post_boot-sun_6_0.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-sun_default_6_2.sh",
+    src: "bin/init.kernel.post_boot-sun_default_6_2.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.class_core.sh",
+    src: "bin/init.qcom.class_core.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot.sh",
+    src: "bin/init.qcom.early_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.kernel.sh",
+    src: "bin/init.qti.kernel.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qti.kernel.rc",
+    src: "etc/init.qti.kernel.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qti.kernel.target.rc",
+    src: "etc/init.qti.kernel.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
