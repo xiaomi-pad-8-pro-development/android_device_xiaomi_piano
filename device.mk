@@ -214,10 +214,12 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
 
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/xm_power/charger/smart_charge/smart_night)
-$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
-$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+# Charging control votes the battery charging off in the MCA charge
+# interface; the charger input stays on, so the tablet runs from the adapter.
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/devices/platform/soc/soc:mca_charge_interface/battery_charging)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,1)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,0)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,true)
 
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default

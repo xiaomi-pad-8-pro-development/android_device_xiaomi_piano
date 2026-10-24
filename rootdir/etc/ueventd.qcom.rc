@@ -633,3 +633,4 @@ subsystem mem_buf_vm
 
 # Bypass charging, written by PianoParts
 /sys/devices/platform/soc/soc:mca_charge_interface charge_enable 0660 system system
+/sys/devices/platform/soc/soc:mca_charge_interface battery_charging 0660 system system

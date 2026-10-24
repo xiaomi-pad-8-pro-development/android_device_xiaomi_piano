@@ -24,6 +24,7 @@ genfscon sysfs /devices/platform/soc/soc:mca_bmd u:object_r:vendor_sysfs_xm_powe
 genfscon sysfs /devices/platform/soc/soc:mca_business_charger u:object_r:vendor_sysfs_xm_power:s0
 genfscon sysfs /devices/platform/soc/soc:mca_charge_interface u:object_r:vendor_sysfs_xm_power:s0
 genfscon sysfs /devices/platform/soc/soc:mca_charge_interface/charge_enable u:object_r:vendor_sysfs_charge_enable:s0
+genfscon sysfs /devices/platform/soc/soc:mca_charge_interface/battery_charging u:object_r:vendor_sysfs_battery_charging:s0
 genfscon sysfs /devices/platform/soc/soc:mca_strategy_basic_wireless_class u:object_r:vendor_sysfs_xm_power:s0
 genfscon sysfs /devices/platform/soc/soc:mca_strategy_pd_auth u:object_r:vendor_sysfs_xm_power:s0
 genfscon sysfs /devices/platform/soc/soc:mca_strategy_quick_charge u:object_r:vendor_sysfs_xm_power:s0

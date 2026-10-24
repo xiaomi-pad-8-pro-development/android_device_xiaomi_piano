@@ -5,9 +5,6 @@ binder_call(system_app, hal_touchfeature_xiaomi_default)
 hal_client_domain(system_app, vendor_hal_displayfeature_xiaomi)
 # Pen battery popup: read the charger's REVERSE_PEN_SOC uevents.
 allow system_app self:netlink_kobject_uevent_socket { create bind read setopt getopt };
-# Bypass charging tile: the smart_chg node.
-allow system_app vendor_sysfs_qcom_battery:dir search;
-allow system_app vendor_sysfs_qcom_battery:file rw_file_perms;
 # Bypass charging tile: vote the battery charging off in the MCA charge
 # interface. Only system_app writes this node.
 type vendor_sysfs_charge_enable, sysfs_type, fs_type;

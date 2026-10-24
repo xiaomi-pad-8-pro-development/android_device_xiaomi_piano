@@ -4,3 +4,6 @@ allow hal_lineage_health_default vendor_sysfs_qcom_battery:dir r_dir_perms;
 allow hal_lineage_health_default vendor_sysfs_battery_supply:dir r_dir_perms;
 allow hal_lineage_health_default vendor_sysfs_qcom_battery:file rw_file_perms;
 allow hal_lineage_health_default vendor_sysfs_battery_supply:file rw_file_perms;
+# Charging control: the plain battery charging switch of the MCA charge interface.
+type vendor_sysfs_battery_charging, sysfs_type, fs_type;
+allow hal_lineage_health_default vendor_sysfs_battery_charging:file rw_file_perms;
