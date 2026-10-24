@@ -129,6 +129,19 @@ blob_fixups: blob_fixups_user_type = {
         ),
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
         .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so'),
+    # Lower the PAL log level so low latency playback stops flooding logcat.
+    (
+        'odm/etc/audio/sku_sun/resourcemanager_sun_mtp.xml',
+        'vendor/etc/audio/sku_sun/resourcemanager_sun_mtp.xml',
+    ): blob_fixup()
+        .regex_replace('logging_level" value ="0x7"', 'logging_level" value ="0x3"'),
+    # Stub memLoggerEnqueue with "return 0": it looks up an uninitialized
+    # mutex and floods logcat with COMU errors while audio renders.
+    'vendor/lib64/libarmemlog.so': blob_fixup()
+        .sig_replace(
+            '3f 23 03 d5 ff 43 01 d1 fd 7b 01 a9 f7 13 00 f9',
+            'e0 03 1f 2a c0 03 5f d6 1f 20 03 d5 1f 20 03 d5',
+        ),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .add_needed('libaudioutils_shim.so')
         .replace_needed('android.hardware.audio.core.sounddose-V2-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so')
