@@ -177,9 +177,6 @@ vendor/lib64/libozocapability.so|a65457a3155c1f1954951b7ffd2a3c93ec30c6ca
 vendor/lib64/libozotensorflowlite_c.so|60bb1c383e66f4c8dd110823148c4881d86cfad0
 
 # Audio (AGM)
-vendor/lib64/libagm_compress_plugin.so|0c63122421efa38142ed30b31aad374d502219c6
-vendor/lib64/libagm_mixer_plugin.so|c19ae1bfed08fd7900e1f68b3e599221c925a80e
-vendor/lib64/libagm_pcm_plugin.so|805e708dfcbc05245c8e189cfa08c12ef44125ba
 vendor/lib64/libagm.so|8e8321dc76379be396f1c071b36420f7d537ca04
 vendor/lib64/libagmclient.so|6396e76e29a02202665ce0feb464b6513a3ccea9
 vendor/lib64/libagmipcservice.so|b34fa3eded164e6fe8046bbb860c2067cfcf0141
