@@ -39,6 +39,9 @@ ro.vendor.audio.denoiseutils=true
 vendor.audio.cpu.sched.cpus=8
 vendor.audio.support.16bit.record=true
 
+# Bluetooth
+ro.bluetooth.finder.supported=true
+
 # Camera
 debug.config.video.hevchdr10.encode.support=true
 debug.config.video.p3.encode.support=true
