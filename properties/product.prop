@@ -22,6 +22,10 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.bas.client.enabled=true
 
+# Dexopt: compile apps four at a time on the first boot after an update,
+# like stock.
+pm.dexopt.boot-after-ota.concurrency=4
+
 # Show the boot animation in landscape, the way the tablet is normally held.
 ro.bootanim.set_orientation_logical_0=ORIENTATION_90
 
