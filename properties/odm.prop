@@ -72,6 +72,7 @@ ro.vendor.display.video_or_camera_fps.support=true
 vendor.display.boost_cpu_layer_number_threshold=12
 vendor.display.disable_3d_adaptive_tm=1
 vendor.display.disable_cwb_call=0
+vendor.display.disable_llcc_during_aod=1
 vendor.display.disable_sdr_dimming=0
 vendor.display.disable_stc_dimming=1
 vendor.display.enable_hdr10_gpu_target=0
