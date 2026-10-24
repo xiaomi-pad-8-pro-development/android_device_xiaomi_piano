@@ -1,2 +1,2 @@
 allow vendor_sensors vendor_sysfs_displayfeature:dir search;
-allow vendor_sensors vendor_sysfs_displayfeature:file read;
+allow vendor_sensors vendor_sysfs_displayfeature:file r_file_perms;
