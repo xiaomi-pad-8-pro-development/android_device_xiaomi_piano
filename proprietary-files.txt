@@ -1267,7 +1267,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.sensorscalibrate.xml|31295e3d5939c
 vendor/etc/sensors/config/chre_dynamic_sensors.json|1d15062ebdd080627431aca3534f0aefa2eab47f
 vendor/etc/sensors/hals.conf|4dfaeedcafd6e149ffbda8a8ba4210c9c225af44
 vendor/etc/sensors/sns_reg_config|1da512c656b442f7d37cc8808f68b3789a8b4d94
-vendor/lib64/hw/sensors.dynamic_sensor_hal.so|50df8d7214154847c0314e97bd1f5060c53d2d9a
 vendor/lib64/libqsh.so|f3da5bc04d22ce19577655466741af42dfeb4582
 vendor/lib64/libsensor_calibration.so|e276ef81cf57949fb259893ddc633b8fba114665
 vendor/lib64/libsensorcal.so|6afd37a36c5f82e565a12a8a67e1be0515e8344e
