@@ -1,5 +1,6 @@
-# PianoParts runs as system_app: it sends the screen rotation to TouchFeature
-# and switches the DisplayFeature reading mode.
+# The Xiaomi apps run as system_app. XiaomiDisplay sends the screen rotation
+# to TouchFeature and sets the DisplayFeature effects; XiaomiStylus sets the
+# pen touch modes.
 hal_client_domain(system_app, hal_touchfeature_xiaomi)
 binder_call(system_app, hal_touchfeature_xiaomi_default)
 hal_client_domain(system_app, vendor_hal_displayfeature_xiaomi)

@@ -631,6 +631,6 @@ subsystem mem_buf_vm
 # Tap to wake, written by the power HAL
 /sys/devices/virtual/touch/touch_dev double_tap 0664 system system
 
-# Bypass charging, written by PianoParts
+# Bypass charging (XiaomiBypass) and charging control (Lineage health)
 /sys/devices/platform/soc/soc:mca_charge_interface charge_enable 0660 system system
 /sys/devices/platform/soc/soc:mca_charge_interface battery_charging 0660 system system

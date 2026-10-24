@@ -4,7 +4,7 @@ app_domain(midevauth_app)
 net_domain(midevauth_app)
 binder_use(midevauth_app)
 # Stock MiDevAuth looks up ActivityManager before attaching its application.
-# Without this the process times out and PianoParts repeatedly loses auth.
+# Without this the process times out and XiaomiKeyboard repeatedly loses auth.
 allow midevauth_app activity_service:service_manager find;
-# PianoParts is the client of the app's bound authentication service.
+# XiaomiKeyboard is the client of the app's bound authentication service.
 binder_call(system_app, midevauth_app)

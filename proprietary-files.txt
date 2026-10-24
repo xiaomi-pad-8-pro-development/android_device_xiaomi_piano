@@ -2967,10 +2967,10 @@ product/media/wallpaper/wallpaper_BU.jpg|fb7d9e582f38259e60ed7c972354e5c9f76b43e
 product/media/wallpaper/wallpaper_DG.jpg|624360f94acb94f7bebbd485328e18aa7e06007b
 product/media/wallpaper/wallpaper_TA.jpg|b74d979ec364bdb23895b9f90eacd19b7e7fa844
 
-# Keyboard cover authentication service (Global 303 product), bound by PianoParts
+# Keyboard cover authentication service (Global 303 product), bound by XiaomiKeyboard
 -product/app/MiDevAuthService/MiDevAuthService.apk;PRESIGNED|03fc2e8c37e17cafee3811158f34cc2b0fe3f4fd
 
-# Keyboard cover firmware (stock odm/etc), read by PianoParts
+# Keyboard cover firmware (stock odm/etc), read by XiaomiKeyboard
 odm/etc/Keyboard_Upgrade_0x01_1260.bin:system_ext/etc/piano_keyboard/Keyboard_Upgrade_0x01_1260.bin|16062ed64f2d04cba471aadfc15635e107a43906
 odm/etc/Keyboard_Upgrade_0x01_1294.bin:system_ext/etc/piano_keyboard/Keyboard_Upgrade_0x01_1294.bin|bc648fbdc29cbe8b2fc4213615d50d6bb864c22c
 odm/etc/Keyboard_Upgrade_0x10_1260.bin:system_ext/etc/piano_keyboard/Keyboard_Upgrade_0x10_1260.bin|16062ed64f2d04cba471aadfc15635e107a43906
