@@ -1,6 +1,15 @@
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 
+on init
+    # I/O scheduler
+    write /sys/block/sda/queue/scheduler ssg
+    write /sys/block/sdb/queue/scheduler ssg
+    write /sys/block/sdc/queue/scheduler ssg
+    write /sys/block/sdd/queue/scheduler ssg
+    write /sys/block/sde/queue/scheduler ssg
+    write /sys/block/sdf/queue/scheduler ssg
+
 # Stock battery anti-aging runs once at boot and tunes the charge voltage
 # from the battery's cycle count and health. The stock power-off charging
 # service and its charger fstab are left out.
