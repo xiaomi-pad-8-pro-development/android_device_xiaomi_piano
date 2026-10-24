@@ -4,3 +4,4 @@
 # lose their network, Binder, QRTR, and service-manager permissions.
 domain_auto_trans(vendor_location, vendor_location_lowi_server_exec, vendor_location_lowi_server)
 domain_auto_trans(vendor_location, vendor_location_xtra_daemon_exec, vendor_location_xtra_daemon)
+allow vendor_location_lowi_server vendor_location:fd use;
