@@ -76,4 +76,9 @@
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
     <string name="config_wifi_tcp_buffers">524288,1048576,16777216,262144,524288,16777216</string>
+
+    <!-- Take the country code from nearby access points. The tablet has
+         no modem, so the driver otherwise stays in world mode and only
+         scans 5GHz passively. -->
+    <bool translatable="false" name="config_wifiUpdateCountryCodeFromScanResultGeneric">true</bool>
 </resources>
