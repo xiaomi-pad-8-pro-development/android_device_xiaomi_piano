@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
+    audiohalservice.qti \
     libaudiohalvendorextn \
     libmemunreachable.vendor \
     qtiaudiohalvendorextn
@@ -73,6 +74,8 @@ PRODUCT_PACKAGES += \
     libhotword_intf \
     libldnhncr \
     libloudnessenhanceraidl \
+    libpaleventnotifier \
+    libpalipcservice \
     libreverbaidl \
     libreverbwrapper \
     libsoundtriggerhal.qti \

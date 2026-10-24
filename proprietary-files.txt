@@ -99,7 +99,6 @@ odm/lib64/libaudioroute_ext.so|75ec27aa6b8b0af6d098641f940ea7d18e80648a|47d12629
 odm/lib64/libcrussp.so|1d00aa51493bbbfbe9a4e5dacd81c7ef74f4326f
 odm/lib64/libwindns.so;DISABLE_CHECKELF|6ffa870c117cd2912624581fde340dea0f50d3d1
 odm/lib64/vendor.xiaomi.hardware.seaaudio-V1-ndk.so|c83bb50fe3adab54675d2b3e04952d4c1fe4dd21
-vendor/bin/hw/audiohalservice.qti|b472b58b261136ef7762708a8cfa7c2ee10eff45|a5a82e42bb913507e1165288eb46ed7bfd8f865a
 vendor/etc/hrtf5c.bin|4a88db8a712156ac6631971a7a4d383b156fba8c
 vendor/etc/init/audiohalservice_qti.rc|75e368956879b06056816f50380a2618242e5f79|9bd87ec962d9f3d17817772abcb98b3d1bfdc787
 vendor/etc/models/acd/environment.eai|3a17c7a8293ced4cde26f626fd4ce8bdfd2989de
@@ -156,8 +155,6 @@ vendor/lib64/libmisoundfx_aidl_ext.so;SYMLINK=vendor/lib64/soundfx/libmisoundfx_
 vendor/lib64/libmisoundsa.so|7787665c81db37392b8dda3c3cfe453bec29370f
 vendor/lib64/libpal_net_if.so|d422bfa9a361620770de2f25303e725496d4ab43
 vendor/lib64/libpalclient.so|a36ff4c64a800b973812721812158487d6eb45b6
-vendor/lib64/libpaleventnotifier.so|a69b4c78d016d5f0220f5eb0d906956767063747
-vendor/lib64/libpalipcservice.so|e261c693c469e93fb0eeba4d19299e63af8ded84
 vendor/lib64/libqasr.so|d9985baf18d0081e9ae127f9c3ca0d3b568ca45b
 vendor/lib64/libqtigefar.so;DISABLE_DEPS|3a018270324c658df8e409e6437bf76b256b73ac
 vendor/lib64/libRecordCNN.so|9b5685dc323e4a12ffe71422c626179e6d14d172

@@ -254,7 +254,6 @@ blob_fixups: blob_fixups_user_type = {
         ),
      (
        'odm/lib64/libmiXmlParser.so',
-       'vendor/bin/hw/audiohalservice.qti',
        'vendor/bin/poweropt-service',
        'vendor/lib64/libaodoptfeature.so',
        'vendor/lib64/libaudiocloudctrl.so',
