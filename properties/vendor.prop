@@ -126,6 +126,7 @@ persist.backup.ntpServer=0.pool.ntp.org
 debug.egl.hw=0
 debug.graphics.game_default_frame_rate.disabled=1
 debug.mdpcomp.logs=0
+debug.sf.enable_adpf_cpu_hint=true
 debug.sf.enable_vrr_config=1
 graphics.gpu.profiler.support=true
 persist.sys.sf.color_mode=0
