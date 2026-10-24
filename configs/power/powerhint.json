@@ -336,6 +336,48 @@
             "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
         },
         {
+            "PowerHint": "GAME",
+            "Node": "CPULittleSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "GAME",
+            "Node": "CPUBigSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "CPULittleSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "CPUBigSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "SchedBoost",
+            "Duration": 0,
+            "Value": "5"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "GPUMinPwrLevel",
+            "Duration": 0,
+            "Value": "9"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "DDRGoldMinFreq",
+            "Duration": 0,
+            "Value": "4761000"
+        },
+        {
             "PowerHint": "DOUBLE_TAP_TO_WAKE",
             "Node": "TapToWake",
             "Value": "1",
