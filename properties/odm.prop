@@ -60,6 +60,7 @@ ro.vendor.display.default_fps=60
 ro.vendor.display.dobly_dpu.enable=true
 ro.vendor.display.dolbyvision.support=true
 ro.vendor.display.fod_monitor_default_fps=120
+ro.vendor.display.kernel_recoder_enable=false
 ro.vendor.display.mi_calib.enable=true
 ro.vendor.display.mode_change_optimize.enable=true
 ro.vendor.display.nature_mode.enable=true
