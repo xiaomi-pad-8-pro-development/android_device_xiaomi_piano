@@ -10,6 +10,11 @@ allow system_app self:netlink_kobject_uevent_socket { create bind read setopt ge
 # Bypass charging tile: the smart_chg node.
 allow system_app vendor_sysfs_qcom_battery:dir search;
 allow system_app vendor_sysfs_qcom_battery:file rw_file_perms;
+# Bypass charging tile: vote the battery charging off in the MCA charge
+# interface. Only system_app writes this node.
+type vendor_sysfs_charge_enable, sysfs_type, fs_type;
+allow system_app vendor_sysfs_xm_power:dir search;
+allow system_app vendor_sysfs_charge_enable:file rw_file_perms;
 # Keyboard cover: talk to the keyboard nanoapp HAL, which calls back with
 # replies, and follow the caps lock LED of the keyboard input device.
 allow system_app hal_keyboardnanoapp_service:service_manager find;

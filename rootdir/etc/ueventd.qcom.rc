@@ -630,3 +630,6 @@ subsystem mem_buf_vm
 
 # Tap to wake, written by the power HAL
 /sys/devices/virtual/touch/touch_dev double_tap 0664 system system
+
+# Bypass charging, written by PianoParts
+/sys/devices/platform/soc/soc:mca_charge_interface charge_enable 0660 system system
