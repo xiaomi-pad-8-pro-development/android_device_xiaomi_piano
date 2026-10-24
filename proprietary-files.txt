@@ -450,10 +450,8 @@ vendor/lib64/libhdrvivid.so|d86f9495c8cb5524f2c14d6f3b030212c95ea8f6
 # Display HWC
 vendor/bin/hw/vendor.qti.hardware.display.composer-service|8d90c59b396cfbff95f47ec79ca527db5f0c47a1|7e0cf94e336ff46bfd78d816c411589590e5bd1c
 vendor/bin/hw/vendor.qti.hardware.display.demura-service|01d85ccfdbcf7feff63400d9270f364e9023d621
-vendor/bin/init.qti.display_boot.sh|70dcde44416f049890b674eb050065484b2bde4a|5dcfa2129a1d8ccd1c80110337650c4339aa7e57
 vendor/bin/qdcmss|b8ba2892d9c06c776cdfa6f59c22522ecb40d818
 vendor/bin/ubwcconvert|275eafece0972201eab9c108f087898d46898081
-vendor/etc/init/init.qti.display_boot.rc|d70c76f6f9c612be32d60f218421c5566b6e5401
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/etc/init/vendor.qti.hardware.display.composer-service.rc|872f0bd25800805d5638c448d6bf868cc3c7f608
 vendor/etc/snapdragon_color_libs_config.xml|3a6d7d5dccf9607c64c262abe277e0ab0d863944

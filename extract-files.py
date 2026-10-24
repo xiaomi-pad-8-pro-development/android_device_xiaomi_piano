@@ -222,11 +222,6 @@ blob_fixups: blob_fixups_user_type = {
             r'for kernel_ver_dir in \$\{system_dlkm_dir\}/\*;',
             'for kernel_ver_dir in ${system_dlkm_dir} ${system_dlkm_dir}/*;',
         ),
-    'vendor/bin/init.qti.display_boot.sh': blob_fixup()
-        .regex_replace(
-            r'\n        setprop debug\.sf\.enable_vrr_config 1\n        setprop vendor\.display\.enable_hal_self_refresh 1',
-            '\n        # Set statically from vendor.prop; this domain cannot set debug_prop.\n        setprop vendor.display.enable_hal_self_refresh 1'
-        ),
     (
        'vendor/lib64/libqcodec2_core.so',
     ): blob_fixup()
