@@ -1189,6 +1189,7 @@ vendor/etc/init/tlpd.rc|a754d37333ca1b47247a61550e40ec3799aed9f2
 vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa3f
 vendor/etc/init/vendor.qti.tftp.rc|e06161bd3638dc952f360f238ba672d591f6d28b
 vendor/etc/permissions/noRil/apq_excluded_telephony_features.xml|e08af7c66439aa9f0aee7f7a804c370d1bd514f9
+vendor/etc/permissions/removeTelephonyFeature.xml|e08af7c66439aa9f0aee7f7a804c370d1bd514f9
 vendor/etc/telephony_packages.xml|febbf84e8b768e095af55df875fa1e2b32c8d016
 vendor/etc/vintf/manifest/datafactoryservice-saidl.xml|c94458c3b7803bf0816f25805d2324e22c130327
 vendor/lib64/liblqe.so|4926928d13eef26c780581e76d0f824d53594bb7
