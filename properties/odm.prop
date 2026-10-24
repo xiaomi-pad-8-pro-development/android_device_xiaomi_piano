@@ -184,6 +184,7 @@ vendor.display.enable_async_vds_creation=1
 vendor.display.enable_display_extensions=1
 vendor.display.enable_dpps_dynamic_fps=1
 vendor.display.enable_early_wakeup=1
+vendor.display.enable_demura=0
 vendor.display.enable_fp_monitor=1
 vendor.display.enable_hist_intr=1
 vendor.display.enable_optimize_refresh=0
