@@ -102,6 +102,26 @@
             "ResetOnInit": true
         },
         {
+            "Name": "CPULittleSmartFreq",
+            "Path": "/proc/sys/walt/cluster0/smart_freq/ipc_freq_levels",
+            "Values": [
+                "2147483647 2147483647 2147483647 2147483647 2147483647",
+                "2745600 2745600 3014400 3302400 2147483647"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigSmartFreq",
+            "Path": "/proc/sys/walt/cluster1/smart_freq/ipc_freq_levels",
+            "Values": [
+                "2147483647 2147483647 2147483647 2147483647 2147483647",
+                "3801600 4089600 4200000 4320000 2147483647"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
             "Name": "CPUMinFreq",
             "Path": "/sys/kernel/msm_performance/parameters/cpu_min_freq",
             "Values": [
@@ -244,6 +264,18 @@
             "Duration": 0
         },
         {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigSmartFreq",
+            "Duration": 0,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
             "PowerHint": "LAUNCH",
             "Node": "SchedBoost",
             "Value": "5",
@@ -290,6 +322,18 @@
             "Node": "GPUMinPwrLevel",
             "Value": "9",
             "Duration": 1500
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPULittleSmartFreq",
+            "Duration": 1500,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigSmartFreq",
+            "Duration": 1500,
+            "Value": "2147483647 2147483647 2147483647 2147483647 2147483647"
         },
         {
             "PowerHint": "DOUBLE_TAP_TO_WAKE",

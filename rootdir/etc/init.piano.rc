@@ -51,6 +51,10 @@ on boot
     chmod 0664 /proc/sys/walt/sched_min_task_util_for_boost
     chown system system /proc/sys/walt/sched_min_task_util_for_colocation
     chmod 0664 /proc/sys/walt/sched_min_task_util_for_colocation
+    chown system system /proc/sys/walt/cluster0/smart_freq/ipc_freq_levels
+    chmod 0664 /proc/sys/walt/cluster0/smart_freq/ipc_freq_levels
+    chown system system /proc/sys/walt/cluster1/smart_freq/ipc_freq_levels
+    chmod 0664 /proc/sys/walt/cluster1/smart_freq/ipc_freq_levels
     chown system system /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
     chmod 0664 /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
     chown system system /sys/devices/system/cpu/cpu6/core_ctl/min_cpus
