@@ -153,6 +153,7 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 # /data after a failed mount, so Android's first-stage fstab stays stock.
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+$(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
