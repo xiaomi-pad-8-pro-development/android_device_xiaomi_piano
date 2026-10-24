@@ -1,9 +1,7 @@
 # PianoParts runs as system_app: it sends the screen rotation to TouchFeature
-# switches the mi_thermald profile and the DisplayFeature reading mode.
+# and switches the DisplayFeature reading mode.
 hal_client_domain(system_app, hal_touchfeature_xiaomi)
 binder_call(system_app, hal_touchfeature_xiaomi_default)
-allow system_app sysfs_thermal:dir search;
-allow system_app sysfs_thermal:file rw_file_perms;
 hal_client_domain(system_app, vendor_hal_displayfeature_xiaomi)
 # Pen battery popup: read the charger's REVERSE_PEN_SOC uevents.
 allow system_app self:netlink_kobject_uevent_socket { create bind read setopt getopt };
