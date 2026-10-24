@@ -480,7 +480,6 @@ vendor/lib64/libsdmdal.so|7a3f0bd0c6523bfdbf58d0f013669f53197dd3e5
 vendor/lib64/libsdmutils.so|40db3932d0d07eaad9c06555bb747d52dc8841d3
 vendor/lib64/libsnapdragoncolor-manager.so|762703b27c7909215f4669c9f9e10af589dd9a62
 vendor/lib64/libsnapdragoncolor-qdcm.so|fea1c5e5d46f88e9aa14e2284fd8ab12078f2390
-vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so|cf60a06987294f7389105bcad8e7a4ae54c0886f
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|a1ae3be7fe6b9645a66dedc22cc0c12affb73013
 vendor/lib64/vendor.xiaomi.hardware.display.mihwcextension-V1-ndk.so|caf5cca1d8f61d649e0c470f11dfdff2876c8c6a
 
