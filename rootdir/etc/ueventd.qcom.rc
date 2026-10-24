@@ -627,3 +627,6 @@ subsystem mem_buf_vm
 
 # IPA Events
 /dev/ipa_events         0660   radio      radio
+
+# Tap to wake, written by the power HAL
+/sys/devices/virtual/touch/touch_dev double_tap 0664 system system
