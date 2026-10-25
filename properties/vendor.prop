@@ -205,3 +205,9 @@ ro.config.media_vol_steps=15
 # The panel is mounted rotated; the touch grid is portrait.
 debug.sf.ignore_hwc_physical_display_orientation=true
 ro.surface_flinger.primary_display_orientation=ORIENTATION_270
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Graphics
+ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.sun.api35
