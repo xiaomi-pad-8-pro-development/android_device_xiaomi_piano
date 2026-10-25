@@ -491,6 +491,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/xiaomi/piano/piano-vendor.mk)
 
 # Optional trees, included when synced
+$(call inherit-product-if-exists, device/xiaomi/piano-aosp-notes/notes.mk)
 $(call inherit-product-if-exists, device/xiaomi/piano-alxp-parts/alxpparts.mk)
 $(call inherit-product-if-exists, device/xiaomi/piano-patches/patches.mk)
 $(call inherit-product-if-exists, device/xiaomi/piano-xiaomi-parts/pianoparts.mk)
