@@ -139,6 +139,7 @@ debug.sf.predict_hwc_composition_strategy=0
 debug.sf.region_sampling_period_ns=200000000
 debug.sf.region_sampling_timer_timeout_ns=200000000
 debug.sf.set_idle_timer_ms=1100
+debug.sf.frame_rate_multiple_threshold=120
 debug.sf.treat_170m_as_sRGB=1
 debug.sf.use_phase_offsets_as_durations=1
 ro.surface_flinger.clear_slots_with_set_layer_buffer=false
