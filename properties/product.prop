@@ -31,3 +31,10 @@ ro.bootanim.set_orientation_logical_0=ORIENTATION_90
 
 # Let the setup wizard follow the tablet's rotation.
 ro.setupwizard.rotation_locked=false
+
+# Audio (stock)
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+media.stagefright.audio.deep=true
