@@ -29,8 +29,11 @@ repo sync
 | `device/xiaomi/piano-patches` | [android_device_xiaomi_piano-patches](https://github.com/xiaomi-pad-8-pro-development/android_device_xiaomi_piano-patches) | optional |
 | `vendor/xiaomi/piano-xiaomi-camera` | [android_vendor_xiaomi_piano-xiaomi-camera](https://github.com/xiaomi-pad-8-pro-development/android_vendor_xiaomi_piano-xiaomi-camera) | optional |
 | `vendor/xiaomi/piano-xiaomi-notes` | [android_vendor_xiaomi_piano-xiaomi-notes](https://github.com/xiaomi-pad-8-pro-development/android_vendor_xiaomi_piano-xiaomi-notes) | optional |
+| `device/xiaomi/piano-aosp-notes` | [android_device_xiaomi_piano-aosp-notes](https://github.com/xiaomi-pad-8-pro-development/android_device_xiaomi_piano-aosp-notes) | optional |
 
 Optional trees are picked up when synced; the device builds without them.
+`device/xiaomi/piano-kernel` has two branches: `seventeen` for the plain
+kernel and `seventeen-ksu` for the one with KernelSU-Next.
 Release builds set `PIANO_AVB_KEY_PATH` to their AVB key; otherwise the AOSP
 test key is used.
 
