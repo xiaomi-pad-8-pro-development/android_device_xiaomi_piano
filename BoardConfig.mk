@@ -164,8 +164,8 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/system_ext/private
 
 # Security patch
-BOOT_SECURITY_PATCH := 2026-09-01
-VENDOR_SECURITY_PATCH := 2026-09-01
+BOOT_SECURITY_PATCH := 2026-10-01
+VENDOR_SECURITY_PATCH := 2026-10-01
 
 # Verified Boot
 # Release builds pass their own RSA4096 key as a source-relative path in

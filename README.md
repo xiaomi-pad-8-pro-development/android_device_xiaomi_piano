@@ -1,7 +1,7 @@
 # Device tree for the Xiaomi Pad 8 Pro (piano)
 
 Android 17 device tree for the Xiaomi Pad 8 Pro (`piano`, Snapdragon 8 Elite,
-SM8750). Stock files come from HyperOS 4 China `OS4.0.0.44.XPYCNXM`; flash
+SM8750). Stock files come from HyperOS 4 China `OS4.0.5.0.XPYCNXM`; flash
 that firmware before installing a build from this tree.
 
 Goes in `device/xiaomi/piano`.
