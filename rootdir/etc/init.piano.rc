@@ -79,3 +79,8 @@ on boot
 on property:sys.boot_completed=1
     # Start processing power hints once boot is done.
     setprop vendor.powerhal.init 1
+
+on boot
+    # TCP buffer sizes from the stock minetd init script.
+    write /proc/sys/net/ipv4/tcp_rmem "524288 1048576 16777216"
+    write /proc/sys/net/ipv4/tcp_wmem "262144 524288 16777216"

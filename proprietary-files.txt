@@ -2520,14 +2520,12 @@ vendor/bin/hw/vendor.qti.memory.pasrmanager-service|aba78ebfe206beceba7b2c03d199
 vendor/bin/hw/vendor.xiaomi.aidl.minet@1.0-service|7f55965dcf5722b562d6bf7573c4bddc87ac7edc
 vendor/bin/hw/vendor.xiaomi.hardware.fbo-service|c1a582c913b5c087e37c2da25f0fa28d2e0c50d7
 vendor/bin/hw/vendor.xiaomi.hardware.miperf2-service|10ea3aba2509fe87713710dbcce906d951bb356e|194251ee4e6b6de08b9a6ce8a77501c85ac77cf9
-vendor/bin/minetd|560a316a5f315f9e52f918ab8b1e6998057e4ea1
 vendor/bin/qsap_dcfd|b3e52ee06a511c0b6da29ddca28b298ca59e7f95
 vendor/bin/qsap_sensors|3e86c3ea383b77fc0fc89337400b7ebbffb97e84
 vendor/etc/init/dcfd.rc|7009a747a7c490749df832256f91f32745a3d195
 vendor/etc/init/ddr_freq.rc|8df726b7785ba4127028769d0ccd8dd3ec7e5351
 vendor/etc/init/ddr_training.rc|936f0140979b144192d7791ee8907ae4d47353ba
 vendor/etc/init/dlsc.rc|ffd7bdcd6e2d3058e9aa5f3cb60cddf9a1f8fd32
-vendor/etc/init/minetd.rc|523675d3794d11e643cd20120d6a44ef4fb78e78
 vendor/etc/init/qwesd.rc|e1af363d8301a84db78533e1ef846b061f010de0
 vendor/etc/init/vendor.qsap.location.rc|3b95c6ee5b19974fa90fccfa8dfd498828356a8f
 vendor/etc/init/vendor.qsap.sensors.rc|65a1095ce3c72d712afef27fd54f587110a7dec0
