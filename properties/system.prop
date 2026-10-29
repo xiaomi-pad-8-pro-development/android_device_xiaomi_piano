@@ -18,9 +18,6 @@ ro.mediaserver.64b.enable=true
 # NFC
 ro.nfc.port=I2C
 
-# SSR
-persist.vendor.ssr.enable_ramdumps=1
-
 # WiFi display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
