@@ -98,6 +98,8 @@ blob_fixups: blob_fixups_user_type = {
             r'(service set_diag_state [^\n]*\n)',
             r'\1    user root\n'
         ),
+    'vendor/etc/display/DPU12__.xml': blob_fixup()
+        .regex_replace(r'<Param9>1.05</Param9>', '<Param9>1.04</Param9>'),
     'vendor/etc/init/nicmd.rc': blob_fixup()
         .regex_replace(
             r'(service vendor\.nicmd [^\n]*\n)',
