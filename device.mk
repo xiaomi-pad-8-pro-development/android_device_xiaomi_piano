@@ -260,6 +260,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
+# Touch firmware for recovery, which loads the touch drivers from vendor_boot
+# but has no vendor or odm partition mounted.
+PRODUCT_COPY_FILES += \
+    $(foreach f,novatek_nt36532_piano_fw_boe.bin novatek_nt36532_piano_fw_csot.bin \
+        novatek_nt36532_piano_mp_boe.bin novatek_nt36532_piano_mp_csot.bin \
+        piano_nova_boe_thp_config.ini piano_nova_csot_thp_config.ini, \
+        vendor/xiaomi/piano/proprietary/odm/firmware/$(f):$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/$(f))
+
 # Stock init and module-loading scripts use the vendor shell and tools.
 PRODUCT_PACKAGES += \
     sh_vendor \
