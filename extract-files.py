@@ -298,8 +298,7 @@ blob_fixups: blob_fixups_user_type = {
             'offlinehdrraw2y', 'offlineheic', 'offlinei2y', 'offlinejpeg',
             'offlinemfnr', 'offlinemlawb', 'offlinetintlesshdr', 'offlinetintless',
             'offlineyuvreprocess', 'offlineyuvsplit')] +
-        ['vendor/bin/hw/vendor.xiaomi.hardware.miperf2-service',
-         'vendor/lib64/libcamxcoreutils.so', 'vendor/lib64/libcamxods.so',
+        ['vendor/lib64/libcamxcoreutils.so', 'vendor/lib64/libcamxods.so',
          'vendor/lib64/libmicamera_aidl_provider.so',
          'vendor/lib64/libmicamera_hal_core.so', 'vendor/lib64/libsimulation.so']
     ): blob_fixup()

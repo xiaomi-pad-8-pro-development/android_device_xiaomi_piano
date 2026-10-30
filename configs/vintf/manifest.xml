@@ -13,8 +13,4 @@
         <name>android.hardware.camera.provider</name>
         <fqname>ICameraProvider/external/0</fqname>
     </hal>
-    <hal format="aidl">
-        <name>vendor.xiaomi.aidl.minet</name>
-        <fqname>IMiNetAIDLService/default</fqname>
-    </hal>
 </manifest>

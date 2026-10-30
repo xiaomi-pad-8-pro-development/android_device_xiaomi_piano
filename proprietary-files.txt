@@ -374,12 +374,6 @@ vendor/lib64/libvideoutils.so|0702375fee0ac586b319be43451cf6b92799ff1c
 # Computer vision firmware
 
 # Configstore
-vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore-service|a35ad06924ed64e4d6c0e05483187bf50a3c0b1f
-vendor/etc/configstore/wigig.xml|ae50a99600bfd7b95f2a073943c8018316ca014f
-vendor/etc/init/vendor.qti.hardware.capabilityconfigstore-service.rc|cdf8b2ff791a3c4720d3034d8774aa63f91454e3
-vendor/etc/vintf/manifest/vendor.qti.hardware.capabilityconfigstore-service.xml|9674508adcecb50eff7875bb2cdf77d30539dd01
-vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore-impl.so|7b3db449aec85891677537f32711ac7ea4ad7847
-vendor/lib64/vendor.qti.hardware.capabilityconfigstore-V1-ndk.so|56beff1036fb2fdf1aa864371ea149578076e9aa
 
 # Connection Security
 vendor/bin/ssgqmigd64|20c60f1b1822b83592094854276e424a401d50c8
@@ -1221,14 +1215,10 @@ vendor/lib64/libminkdescriptor.so|a6567d3fe321b3b019739070c50ed574d963b219
 vendor/lib64/libminksocket_vendor.so|62289ba2aa078fc9fa2fde2e92832ae3ff6d90db
 vendor/lib64/libnative-api.so|2d81fa5f54f513a28489c459f16d9427a47e18e9
 
-# Secure element
-vendor/bin/hw/android.hardware.secure_element-service.qti|35c1fa871b02e4ddabfb830c6d25b04a13450eb9
-vendor/etc/init/android.hardware.secure_element-service.qti.rc|47f7f862d1b703e617fb7ceb6b9a3a8ce1c1a3c9
-vendor/etc/permissions/com.android.se.xml|7bd9341b52e890b824168594968afb509e63eb2d
+# Secure element libraries: ssgtzd, PAL and idprovision load these
 vendor/lib64/hw/libEseUtils.so|835307a102322c16c7544568be8953f392363301
 vendor/lib64/libesesbprovision.so|33eebb2cce59cc2ff81ca2afce6510eabe4581cb
 vendor/lib64/libtaautoload.so|1243ec2a34d116a16452d742a06351d01593323c
-vendor/lib64/libGPQeSE.so|a50b4cb8573cfa75e5d15eef86dac6aec866585d
 vendor/lib64/libvui_dmgr_client.so|630353426e6cf13355b1d605d349fab9b6c6288a
 
 # Secure Processor
@@ -2517,9 +2507,7 @@ odm/lib64/vendor.xiaomi.hardware.mikeybag-impl.so|87063ed33ec0f22b7d6b81a2ee6b8f
 vendor/bin/ddr_freq|d4b7c1b96efc5de9e56e8182eeb988de3e629ef1
 vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service|ca525a49359c7bb6c2ba368e3195bafd9bb0d659
 vendor/bin/hw/vendor.qti.memory.pasrmanager-service|aba78ebfe206beceba7b2c03d1995ea2bb0faee8
-vendor/bin/hw/vendor.xiaomi.aidl.minet@1.0-service|7f55965dcf5722b562d6bf7573c4bddc87ac7edc
 vendor/bin/hw/vendor.xiaomi.hardware.fbo-service|c1a582c913b5c087e37c2da25f0fa28d2e0c50d7
-vendor/bin/hw/vendor.xiaomi.hardware.miperf2-service|10ea3aba2509fe87713710dbcce906d951bb356e|194251ee4e6b6de08b9a6ce8a77501c85ac77cf9
 vendor/bin/qsap_dcfd|b3e52ee06a511c0b6da29ddca28b298ca59e7f95
 vendor/bin/qsap_sensors|3e86c3ea383b77fc0fc89337400b7ebbffb97e84
 vendor/etc/init/dcfd.rc|7009a747a7c490749df832256f91f32745a3d195
@@ -2533,9 +2521,7 @@ vendor/etc/init/vendor.qti.hardware.minkipcbinder@1.0-service.rc|6e78beaed7c1de2
 vendor/etc/init/vendor.qti.hardware.wifi.wifilearner-service.rc|3161e9322b0df06c7caa5e472f6174915b35c0f8
 vendor/etc/init/vendor.qti.memory.pasrmanager-service.rc|46a4b2d1a9b88eaf8800db32e9db4e5a8f136994
 vendor/etc/init/vendor.qti.psiclient@1.0-service.rc|3c8e69345951b17aed25be91d5cac59e2ff49c35
-vendor/etc/init/vendor.xiaomi.aidl.minet@1.0-service.rc|bc994e6e324afd9a21d174c21cc2ad478c939821
 vendor/etc/init/vendor.xiaomi.hardware.fbo-service.rc|e8483f3c1c57285ef9ec78577efc7861f43716b8
-vendor/etc/init/vendor.xiaomi.hardware.miperf2-service.rc|a6e7105414ee6e6301b5031081ccdc8fca1dcd85
 vendor/etc/vintf/manifest/cacert-saidl.xml|af590798b4f52238fb81ce2d14ef1a7b0546b6d3
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.fbo.xml|42e83679145f21e02eb7f3d035027c68157847c3
 vendor/etc/vintf/manifest/vendor.qti.hardware.minkipcbinder-service.xml|8a5bd3223463b5dfcf6baf1cf6fa936565302fff
@@ -2544,18 +2530,15 @@ vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml|9be807e6b82d
 # QSPA VINTF comes from vendor/qcom/opensource/core-utils-vendor/qspaservice.
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidl.intentaware-service.xml|347fe4f31f348893499686c1a546d15e7b2d0500
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml|2b13e84fc336a494e99fe950d39d046022c56460
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.miperf2-service.xml|75d7acde4f16249cc78467c4529b8c284f0005fb
 vendor/lib64/hw/vendor.qti.memory.pasrmanager-impl.so|1877cc0de911482269d20d23f42ca3b571700142
 vendor/lib64/libDcfHalFramework.so|94b0b4729fd6fd6510b79a9b030e3d3050ccbc17
 vendor/lib64/libDcfHalLogger.so|7aba2f7f41d0612cee2d33f804cb5b13a1127eb6
 vendor/lib64/libminkipcbinder_vendor.so|0796d8854268dd65cffa96a31b7435ef8a5416f6
 vendor/lib64/libqsh_ble_pb.so|ba5187b8bff08ee6a5d3553ca89f7e4f1eedbf12
 vendor/lib64/vendor.qti.hardware.minkipcbinder-V1-ndk.so|720af46f511a6328ea117e04db060464a782dc5c
-vendor/lib64/vendor.xiaomi.aidl.minet-V1-ndk.so|b6778840e8b8d88793f4d2b910a71526227d8cf9
 vendor/lib64/vendor.xiaomi.hardware.fbo-V1-ndk.so|1f485c43f1530a5f3556cc3c4775d03825aa91d3
 vendor/lib64/vendor.xiaomi.hardware.keyboardnanoapp_aidl-V1-ndk.so|102c330978dc6103ca3f22474142a87d112ea577
 vendor/lib64/vendor.xiaomi.hardware.mikeybag-V1-ndk.so|f4215942721d6d472f06f1c3303cd2fa3bdc22a8
-vendor/lib64/vendor.xiaomi.hardware.miperf2-V1-ndk.so|a185632b10469486a3a00d853faeeb3f4b68ace0
 
 # Seccomp policies (Global 304)
 vendor/etc/seccomp_policy/qsap_dcfd.policy|d7cc9144b6d4c82e16052b1c7b126a2e8a1b9e94

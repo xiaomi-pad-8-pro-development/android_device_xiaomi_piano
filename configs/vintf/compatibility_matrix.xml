@@ -140,14 +140,6 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.miperf2</name>
-        <version>1</version>
-        <interface>
-            <name>IMiPerf</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>vendor.xiaomi.hardware.otrpagent2</name>
         <version>1</version>
         <interface>
@@ -213,13 +205,6 @@
         <name>vendor.qti.sla.service</name>
         <interface>
             <name>ISlaAIDLService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.aidl.minet</name>
-        <interface>
-            <name>IMiNetAIDLService</name>
             <instance>default</instance>
         </interface>
     </hal>

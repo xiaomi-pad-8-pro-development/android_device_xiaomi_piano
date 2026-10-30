@@ -360,7 +360,6 @@ ro.vendor.video_box.version=2
 ro.vendor.vm.ssr.enable=false
 ro.vendor.whitepoint_calibration_enable=false
 ro.vendor.xiaomi.bl.poll=true
-ro.vendor.xiaomi.minet.ftun=1.0.0
 ro.vendor.xiaomi.sr.support=true
 sys.haptic.dfs.support=false
 sys.remoterecord.rx.support=1,1,1,0
