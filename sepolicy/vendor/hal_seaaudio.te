@@ -12,4 +12,4 @@ allow hal_seaaudio_client hal_seaaudio_service:service_manager find;
 allow hal_seaaudio_default dmabuf_system_heap_device:chr_file rw_file_perms;
 allow hal_seaaudio_default hal_system_suspend_service:service_manager find;
 binder_call(hal_seaaudio_server, hal_seaaudio_client)
-allow hal_seaaudio_server hal_seaaudio_service:service_manager { add find };
+add_service(hal_seaaudio_server, hal_seaaudio_service)

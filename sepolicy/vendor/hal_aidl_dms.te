@@ -13,4 +13,4 @@ allow hal_aidl_dms_client hal_aidl_dms_service:service_manager find;
 allow hal_aidl_dms_default vendor_data_file:dir rw_dir_perms;
 allow hal_aidl_dms_default vendor_data_file:file create_file_perms;
 binder_call(hal_aidl_dms_server, hal_aidl_dms_client)
-allow hal_aidl_dms_server hal_aidl_dms_service:service_manager { add find };
+add_service(hal_aidl_dms_server, hal_aidl_dms_service)

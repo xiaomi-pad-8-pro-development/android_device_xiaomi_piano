@@ -20,5 +20,5 @@ allow hal_mlipay_default tee_device:chr_file rw_file_perms;
 allow hal_mlipay_default vendor_dmabuf_qseecom_heap_device:chr_file { ioctl open read };
 allow hal_mlipay_default vendor_dmabuf_qseecom_ta_heap_device:chr_file { ioctl open read };
 binder_call(hal_mlipay_server, hal_mlipay_client)
-allow hal_mlipay_server hal_mlipay_service:service_manager { add find };
+add_service(hal_mlipay_server, hal_mlipay_service)
 binder_call(hal_mlipay_server, servicemanager)

@@ -19,5 +19,5 @@ allow vendor_displayfeature graphics_device:chr_file rw_file_perms;
 allow vendor_displayfeature graphics_device:dir r_dir_perms;
 allow vendor_displayfeature sysfs:file { getattr open read write };
 binder_call(vendor_displayfeature, system_server)
-allow vendor_displayfeature vendor_DisplayFeatureControl_service:service_manager { add find };
+add_service(vendor_displayfeature, vendor_DisplayFeatureControl_service)
 allow vendor_displayfeature vendor_file:file r_file_perms;

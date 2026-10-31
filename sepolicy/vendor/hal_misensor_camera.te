@@ -21,4 +21,4 @@ allow vendor_hal_misensor_camera_default hal_graphics_mapper_hwservice:hwservice
 allow vendor_hal_misensor_camera_default hidl_token_hwservice:hwservice_manager find;
 binder_call(vendor_hal_misensor_camera_server, servicemanager)
 binder_call(vendor_hal_misensor_camera_server, vendor_hal_misensor_camera_client)
-allow vendor_hal_misensor_camera_server vendor_hal_misensor_camera_service:service_manager { add find };
+add_service(vendor_hal_misensor_camera_server, vendor_hal_misensor_camera_service)

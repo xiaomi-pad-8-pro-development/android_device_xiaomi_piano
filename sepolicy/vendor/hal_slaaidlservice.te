@@ -6,7 +6,7 @@ binder_call(hal_slaaidlservice_client, hal_slaaidlservice_server)
 allow hal_slaaidlservice_client hal_slaaidlservice_service:service_manager find;
 binder_call(hal_slaaidlservice_server, hal_slaaidlservice_client)
 allow hal_slaaidlservice_server servicemanager:fd *;
-allow hal_slaaidlservice_server hal_slaaidlservice_service:service_manager { add find };
+add_service(hal_slaaidlservice_server, hal_slaaidlservice_service)
 allow hal_slaaidlservice_default sysfs:file { open read write };
 allow hal_slaaidlservice_default hal_slaaidlservice_service:service_manager add;
 allow hal_slaaidlservice_default vendor_slad_prop:file read;

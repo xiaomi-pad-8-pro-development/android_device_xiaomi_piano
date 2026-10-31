@@ -10,7 +10,7 @@ set_prop(dvs_aidl_server, vendor_dolbyv_prop)
 
 binder_call(dvs_aidl_client, dvs_aidl_server)
 allow dvs_aidl_client dvs_aidl_service:service_manager find;
-allow dvs_aidl_default dvs_aidl_service:service_manager { add find };
+add_service(dvs_aidl_default, dvs_aidl_service)
 allow dvs_aidl_default fwk_sensor_hwservice:hwservice_manager find;
 allow dvs_aidl_default fwk_sensor_service:service_manager find;
 binder_call(dvs_aidl_default, system_server)

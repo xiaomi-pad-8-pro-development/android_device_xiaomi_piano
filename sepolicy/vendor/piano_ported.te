@@ -113,7 +113,7 @@ binder_call(nanoapp_aidl, servicemanager)
 allow nanoapp_aidl system_server:binder { call };
 allow nanoapp_aidl system_server:binder { transfer };
 allow nanoapp_aidl servicemanager_prop:file { read };
-allow nanoapp_aidl hal_keyboardnanoapp_service:service_manager { add find };
+add_service(nanoapp_aidl, hal_keyboardnanoapp_service)
 allow nanoapp_aidl nano_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow vendor_ntagtool vendor_ntagtool_exec:file { read getattr map execute open entrypoint };
 allow vendor_ntagtool ntag_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
@@ -129,7 +129,7 @@ binder_call(vendor_dtool, system_server)
 allow vendor_dtool system_server:fd { use };
 binder_call(vendor_dtool, vendor_mfp-daemon)
 allow vendor_dtool vendor_mfp-daemon:fd { use };
-allow vendor_dtool vendor_hal_fingerprint_dtool1_service:service_manager { add find };
+add_service(vendor_dtool, vendor_hal_fingerprint_dtool1_service)
 allow vendor_dtool vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { add find };
 allow vendor_dtool hidl_base_hwservice:hwservice_manager { add };
 allow vendor_dtool hwservicemanager_prop:file { read getattr map open };
@@ -141,7 +141,7 @@ allow vendor_dtool init:unix_stream_socket { connectto };
 allow vendor_dtool vendor_fp_prop:property_service { set };
 allow vendor_dtool vendor_fp_prop:file { read getattr map open };
 binder_call(vendor_dtool, servicemanager)
-allow vendor_dtool vendor_hal_fingerprint_dtool1_service:service_manager { add find };
+add_service(vendor_dtool, vendor_hal_fingerprint_dtool1_service)
 allow ffu ffu_exec:file { read getattr map execute open entrypoint };
 allow ffu sysfs:dir { ioctl read getattr lock open watch watch_reads search };
 allow ffu sysfs:file { ioctl read getattr lock map open watch watch_reads };
