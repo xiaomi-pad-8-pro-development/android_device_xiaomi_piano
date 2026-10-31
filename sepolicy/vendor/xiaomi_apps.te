@@ -22,12 +22,10 @@ allow system_app sysfs:lnk_file read;
 # The keyboard cover's HID device (0006:15D9:00A3.xxxx) and its LEDs, labelled
 # so that reading them does not need access to all of sysfs.
 type vendor_sysfs_pogo_keyboard, sysfs_type, fs_type;
-allow system_app vendor_sysfs_pogo_keyboard:dir r_dir_perms;
-allow system_app vendor_sysfs_pogo_keyboard:file r_file_perms;
+r_dir_file(system_app, vendor_sysfs_pogo_keyboard)
 allow system_app vendor_sysfs_pogo_keyboard:lnk_file read;
 # system_server reads the keyboard cover's input device (sysfs) as well.
-allow system_server vendor_sysfs_pogo_keyboard:dir r_dir_perms;
-allow system_server vendor_sysfs_pogo_keyboard:file r_file_perms;
+r_dir_file(system_server, vendor_sysfs_pogo_keyboard)
 allow system_server vendor_sysfs_pogo_keyboard:lnk_file read;
 # Desktop mode tile: the same property the developer option writes (the
 # platform neverallow lets it be set on userdebug and eng builds only).
