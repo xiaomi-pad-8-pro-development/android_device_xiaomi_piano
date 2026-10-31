@@ -18,8 +18,7 @@ r_dir_file(hal_micharge_default, vendor_sysfs_battery_supply)
 r_dir_file(hal_micharge_default, vendor_sysfs_usb_node)
 r_dir_file(hal_micharge_default, vendor_sysfs_usb_supply)
 
-allow hal_micharge_client hal_micharge_server:binder { call transfer };
-allow hal_micharge_client hal_micharge_server:fd *;
+binder_call(hal_micharge_client, hal_micharge_server)
 allow hal_micharge_client hal_micharge_service:service_manager find;
 allow hal_micharge_default hidraw_device:chr_file rw_file_perms;
 allow hal_micharge_default sysfs:dir { getattr open read search };
@@ -31,6 +30,5 @@ allow hal_micharge_default vendor_sysfs_usb_node:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_usb_supply:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_xm_power:dir r_dir_perms;
 allow hal_micharge_default vendor_sysfs_xm_power:file rw_file_perms;
-allow hal_micharge_server hal_micharge_client:binder { call transfer };
-allow hal_micharge_server hal_micharge_client:fd *;
+binder_call(hal_micharge_server, hal_micharge_client)
 allow hal_micharge_server hal_micharge_service:service_manager { add find };

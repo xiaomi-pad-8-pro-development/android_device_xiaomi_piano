@@ -14,7 +14,5 @@ hal_client_domain(hal_audio_default, hal_ozonotify)
 hal_client_domain(platform_app, hal_ozonotify)
 hal_client_domain(priv_app, hal_ozonotify)
 
-allow hal_ozonotify_client hal_ozonotify_server:binder { call transfer };
-allow hal_ozonotify_server hal_ozonotify_client:binder { call transfer };
-allow hal_ozonotify_client hal_ozonotify_server:fd use;
-allow hal_ozonotify_server hal_ozonotify_client:fd use;
+binder_call(hal_ozonotify_client, hal_ozonotify_server)
+binder_call(hal_ozonotify_server, hal_ozonotify_client)

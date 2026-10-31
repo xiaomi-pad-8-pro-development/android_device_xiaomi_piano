@@ -14,12 +14,8 @@ allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:dir create_dir
 allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:file create_file_perms;
 allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
 allow hal_fingerprint_default vendor_hal_perf_default:binder call;
-allow hal_fingerprint_default platform_app:binder { call transfer };
-allow hal_fingerprint_default platform_app:binder transfer;
-allow hal_fingerprint_default platform_app:fd *;
-allow hal_fingerprint_default system_app:binder { call transfer };
-allow hal_fingerprint_default system_app:binder transfer;
-allow hal_fingerprint_default system_app:fd *;
+binder_call(hal_fingerprint_default, platform_app)
+binder_call(hal_fingerprint_default, system_app)
 allow hal_fingerprint_default sysfs:file write;
 allow hal_fingerprint_default vendor_sysfs_battery_supply:dir r_dir_perms;
 allow hal_fingerprint_default vendor_sysfs_battery_supply:file r_file_perms;

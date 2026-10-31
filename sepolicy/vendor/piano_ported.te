@@ -78,7 +78,7 @@ init_daemon_domain(nanoapp_aidl)
 init_daemon_domain(vendor_dtool)
 init_daemon_domain(vendor_ntagtool)
 allow hal_mimd_default hal_mimd_default_exec:file { read getattr map execute open entrypoint };
-allow hal_mimd_default servicemanager:binder { call transfer };
+binder_call(hal_mimd_default, servicemanager)
 allow hal_mimd_default proc_zoneinfo:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_mimd_default proc_meminfo:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_mimd_default proc_pagetypeinfo:file { ioctl read getattr lock map open watch watch_reads };
@@ -107,9 +107,9 @@ allow hal_mimd_default hal_mimd_default:capability2 { block_suspend };
 allow hal_mimd_default cgroup:file { ioctl read getattr setattr lock map open watch watch_reads };
 allow hal_mimd_default sysfs_lru_gen_enabled:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_mimd_default hal_mimd_default:capability { chown sys_resource };
-allow hal_mimd_default servicemanager:binder { call transfer };
+binder_call(hal_mimd_default, servicemanager)
 allow nanoapp_aidl nanoapp_aidl_exec:file { read getattr map execute open entrypoint };
-allow nanoapp_aidl servicemanager:binder { call transfer };
+binder_call(nanoapp_aidl, servicemanager)
 allow nanoapp_aidl system_server:binder { call };
 allow nanoapp_aidl system_server:binder { transfer };
 allow nanoapp_aidl servicemanager_prop:file { read };
@@ -124,11 +124,10 @@ allow vendor_ntagtool vendor_mac_vendor_data_file:dir { search };
 allow vendor_ntagtool vendor_mac_vendor_data_file:file { ioctl read getattr lock map open watch watch_reads };
 allow vendor_ntagtool vendor_bt_data_file:dir { search };
 allow vendor_ntagtool vendor_bt_data_file:file { ioctl read getattr lock map open watch watch_reads };
-allow vendor_dtool system_server:binder { transfer };
 allow vendor_dtool vendor_dtool_exec:file { read getattr map execute open entrypoint };
-allow vendor_dtool system_server:binder { call transfer };
+binder_call(vendor_dtool, system_server)
 allow vendor_dtool system_server:fd { use };
-allow vendor_dtool vendor_mfp-daemon:binder { call transfer };
+binder_call(vendor_dtool, vendor_mfp-daemon)
 allow vendor_dtool vendor_mfp-daemon:fd { use };
 allow vendor_dtool vendor_hal_fingerprint_dtool1_service:service_manager { add find };
 allow vendor_dtool vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { add find };
@@ -136,14 +135,13 @@ allow vendor_dtool hidl_base_hwservice:hwservice_manager { add };
 allow vendor_dtool hwservicemanager_prop:file { read getattr map open };
 allow vendor_dtool vendor_fingerprint_data_file_fpdump:dir { read write open remove_name search };
 allow vendor_dtool vendor_fingerprint_data_file_fpdump:file { read getattr unlink open };
-allow vendor_dtool hwservicemanager:binder { call transfer };
+binder_call(vendor_dtool, hwservicemanager)
 allow vendor_dtool property_socket:sock_file { write };
 allow vendor_dtool init:unix_stream_socket { connectto };
 allow vendor_dtool vendor_fp_prop:property_service { set };
 allow vendor_dtool vendor_fp_prop:file { read getattr map open };
-allow vendor_dtool servicemanager:binder { call transfer };
+binder_call(vendor_dtool, servicemanager)
 allow vendor_dtool vendor_hal_fingerprint_dtool1_service:service_manager { add find };
-allow vendor_dtool vendor_mfp-daemon:binder { transfer };
 allow ffu ffu_exec:file { read getattr map execute open entrypoint };
 allow ffu sysfs:dir { ioctl read getattr lock open watch watch_reads search };
 allow ffu sysfs:file { ioctl read getattr lock map open watch watch_reads };
@@ -232,7 +230,7 @@ allow ddr_freq sysfs_devices_block:dir { search };
 allow ddr_freq same_process_hal_file:file { read getattr map execute open };
 allow hal_cld_default hal_cld_default_exec:file { read getattr map execute open entrypoint };
 allow hal_cld_default system_server:binder { call };
-allow hal_cld_default servicemanager:binder { call transfer };
+binder_call(hal_cld_default, servicemanager)
 allow hal_cld_default sysfs:dir { read getattr open search };
 allow hal_cld_default sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_cld_default self:netlink_kobject_uevent_socket { read write create getattr setattr lock append map bind connect getopt setopt shutdown };
@@ -243,7 +241,7 @@ allow hal_cld_default gsort_block_device:lnk_file { read write open };
 allow hal_cld_default gsort_block_device:blk_file { read write open };
 allow hal_fbo_default hal_fbo_default_exec:file { read getattr map execute open entrypoint };
 allow hal_fbo_default system_server:binder { call };
-allow hal_fbo_default servicemanager:binder { call transfer };
+binder_call(hal_fbo_default, servicemanager)
 allow hal_fbo_default sysfs:dir { read getattr open search };
 allow hal_fbo_default sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_fbo_default self:netlink_kobject_uevent_socket { read write create getattr setattr lock append map bind connect getopt setopt shutdown };
@@ -273,7 +271,7 @@ allow hal_fbo_default vendor_fbo_prop:file { read getattr map open };
 allow hal_fbo_default init:unix_stream_socket { connectto };
 allow hal_fbo_default property_socket:sock_file { write };
 allow hal_miperf_default hal_miperf_default_exec:file { read getattr map execute open entrypoint };
-allow hal_miperf_default servicemanager:binder { call transfer };
+binder_call(hal_miperf_default, servicemanager)
 allow hal_miperf_default mnt_vendor_file:dir { read getattr open search };
 allow hal_miperf_default mnt_vendor_file:file { read getattr open };
 allow hal_miperf_default mnt_vendor_file:file { write };
@@ -291,7 +289,7 @@ allow hal_miperf_default miperf_data_file:file { read write create getattr setat
 allow hal_miperf_default system_server:binder { call };
 allow hal_miperf_default vendor_system_prop:file { read getattr open };
 allow hal_batteryantiaging_default hal_batteryantiaging_default_exec:file { read getattr map execute open entrypoint };
-allow hal_batteryantiaging_default servicemanager:binder { call transfer };
+binder_call(hal_batteryantiaging_default, servicemanager)
 allow hal_batteryantiaging_default self:netlink_kobject_uevent_socket { read create bind getopt setopt };
 allow hal_batteryantiaging_default kmsg_device:chr_file { read write getattr open };
 allow hal_batteryantiaging_default sysfs:dir { read getattr open search };
@@ -323,7 +321,7 @@ allow hal_batteryantiaging_default init:unix_stream_socket { connectto };
 allow hal_batteryantiaging_default vendor_batteryantiaging_prop:property_service { set };
 allow hal_batteryantiaging_default vendor_batteryantiaging_prop:file { read getattr map open };
 allow hal_mikeybag_default hal_mikeybag_default_exec:file { read getattr map execute open entrypoint };
-allow hal_mikeybag_default servicemanager:binder { call transfer };
+binder_call(hal_mikeybag_default, servicemanager)
 allow hal_mikeybag_default tee_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_mikeybag_default ion_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_mikeybag_default vendor_dmabuf_qseecom_heap_device:chr_file { ioctl read open };
@@ -343,11 +341,11 @@ allow hal_videoservice_default vendor_video_mi_prop:property_service { set };
 allow hal_videoservice_default vendor_video_mi_prop:file { read getattr map open };
 allow hal_videoservice_default vendor_video_mi_prop:file { read getattr map open };
 allow hal_videoservice_default hal_videoservice_default_exec:file { read getattr map execute open entrypoint };
-allow hal_videoservice_default servicemanager:binder { call transfer };
+binder_call(hal_videoservice_default, servicemanager)
 allow hal_videoservice_default servicemanager:fd { use };
 allow hal_videoservice_default hal_mediaeventgatherservice_service:service_manager { find };
 allow hal_miwillservice_default hal_miwillservice_default_exec:file { read getattr map execute open entrypoint };
-allow hal_miwillservice_default servicemanager:binder { call transfer };
+binder_call(hal_miwillservice_default, servicemanager)
 allow hal_miwillservice_default sysfs:file { read write open };
 allow hal_miwillservice_default hal_miwillservice_service:service_manager { add };
 allow hal_miwillservice_default property_socket:sock_file { write };
