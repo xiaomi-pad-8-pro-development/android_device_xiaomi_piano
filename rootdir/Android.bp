@@ -170,14 +170,18 @@ prebuilt_etc {
 }
 
 sh_binary {
-    name: "init.qti.display_boot.sh",
+    name: "init.piano.display_boot.sh",
     src: "bin/init.qti.display_boot.sh",
+    filename: "init.qti.display_boot.sh",
+    overrides: ["init.qti.display_boot.sh"],
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "init.qti.display_boot.rc",
+    name: "init.piano.display_boot.rc",
     src: "etc/init.qti.display_boot.rc",
+    filename: "init.qti.display_boot.rc",
+    overrides: ["init.qti.display_boot.rc"],
     sub_dir: "init",
     vendor: true,
 }
