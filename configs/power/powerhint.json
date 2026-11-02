@@ -198,6 +198,48 @@
             ],
             "DefaultIndex": 1,
             "ResetOnInit": false
+        },
+        {
+            "Name": "OTHER",
+            "Paths": [
+                "<AdpfConfig>:OTHER"
+            ],
+            "Values": [
+                "ADPF_DEFAULT"
+            ],
+            "Type": "Event"
+        },
+        {
+            "Name": "SURFACEFLINGER",
+            "Paths": [
+                "<AdpfConfig>:SURFACEFLINGER"
+            ],
+            "Values": [
+                "ADPF_DEFAULT",
+                "ADPF_SF"
+            ],
+            "Type": "Event"
+        },
+        {
+            "Name": "GAME",
+            "Paths": [
+                "<AdpfConfig>:GAME"
+            ],
+            "Values": [
+                "ADPF_DEFAULT",
+                "ADPF_GAME"
+            ],
+            "Type": "Event"
+        },
+        {
+            "Name": "HWUI",
+            "Paths": [
+                "<AdpfConfig>:HWUI"
+            ],
+            "Values": [
+                "ADPF_DEFAULT"
+            ],
+            "Type": "Event"
         }
     ],
     "Actions": [
@@ -355,6 +397,56 @@
             "UclampMin_LoadReset": 384,
             "UclampMin_High": 512,
             "UclampMin_Low": 0,
+            "ReportingRateLimitNs": 16666666,
+            "TargetTimeFactor": 1.0,
+            "StaleTimeFactor": 10.0,
+            "GpuBoost": false
+        },
+        {
+            "Name": "ADPF_SF",
+            "PID_On": false,
+            "PID_Po": 0.0,
+            "PID_Pu": 0.0,
+            "PID_I": 0.0,
+            "PID_I_Init": 0,
+            "PID_I_High": 0,
+            "PID_I_Low": 0,
+            "PID_Do": 0.0,
+            "PID_Du": 0.0,
+            "SamplingWindow_P": 0,
+            "SamplingWindow_I": 0,
+            "SamplingWindow_D": 0,
+            "UclampMin_On": true,
+            "UclampMin_Init": 200,
+            "UclampMin_LoadUp": 200,
+            "UclampMin_LoadReset": 200,
+            "UclampMin_High": 200,
+            "UclampMin_Low": 200,
+            "ReportingRateLimitNs": 8333333,
+            "TargetTimeFactor": 1.4,
+            "StaleTimeFactor": 5.0,
+            "GpuBoost": false
+        },
+        {
+            "Name": "ADPF_GAME",
+            "PID_On": true,
+            "PID_Po": 3.0,
+            "PID_Pu": 1.0,
+            "PID_I": 0.001,
+            "PID_I_Init": 200,
+            "PID_I_High": 512,
+            "PID_I_Low": -30,
+            "PID_Do": 500.0,
+            "PID_Du": 0.0,
+            "SamplingWindow_P": 1,
+            "SamplingWindow_I": 0,
+            "SamplingWindow_D": 1,
+            "UclampMin_On": true,
+            "UclampMin_Init": 200,
+            "UclampMin_LoadUp": 512,
+            "UclampMin_LoadReset": 512,
+            "UclampMin_High": 640,
+            "UclampMin_Low": 100,
             "ReportingRateLimitNs": 16666666,
             "TargetTimeFactor": 1.0,
             "StaleTimeFactor": 10.0,
