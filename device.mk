@@ -285,6 +285,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/Vendor_0022_Product_5081.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_0022_Product_5081.idc \
     $(LOCAL_PATH)/configs/keychars/Vendor_0022_Product_5081.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_5081.kcm
 
+# Pen tap on the dark screen wakes the tablet for a quick note, like stock.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/NVTCapacitivePenM80p.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenM80p.idc \
+    $(LOCAL_PATH)/configs/idc/NVTCapacitivePenP81c.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c.idc
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
