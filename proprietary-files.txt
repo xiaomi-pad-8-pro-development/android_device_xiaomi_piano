@@ -97,6 +97,7 @@ odm/etc/init/vendor.xiaomi.hardware.seaaudio.rc|20703423f91a46ad7e04d7b0dad51e7c
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.seaaudio.xml|589aa9d40529a562a4728a7e44cc161952364f20
 odm/lib64/libaudioroute_ext.so|75ec27aa6b8b0af6d098641f940ea7d18e80648a|47d12629318c83f40f8b49d8bda10add4fe3c32d
 odm/lib64/libcrussp.so|1d00aa51493bbbfbe9a4e5dacd81c7ef74f4326f
+odm/lib64/libfsalgocal.so|542c58644dfdfb904ebf5909ed185ffeb5de4514
 odm/lib64/libwindns.so;DISABLE_CHECKELF|6ffa870c117cd2912624581fde340dea0f50d3d1
 odm/lib64/vendor.xiaomi.hardware.seaaudio-V1-ndk.so|c83bb50fe3adab54675d2b3e04952d4c1fe4dd21
 vendor/etc/hrtf5c.bin|4a88db8a712156ac6631971a7a4d383b156fba8c
