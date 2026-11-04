@@ -363,7 +363,7 @@ module = ExtractUtilsModule(
 
 if __name__ == '__main__':
     if len(sys.argv) != 2 or not Path(sys.argv[1]).is_dir():
-        raise SystemExit('Supply exactly one offline OS4.0.5.0.XPYCNXM dump directory')
+        raise SystemExit('Supply exactly one offline OS4.0.6.0.XPYCNXM dump directory')
     source = Path(sys.argv[1])
     for line in Path(__file__).with_name('proprietary-files.txt').read_text().splitlines():
         if not line or line.startswith('#'):
