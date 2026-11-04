@@ -1,0 +1,54 @@
+name: HyperOS update
+
+# Checks for a new piano HyperOS China stable release. When one is out, it
+# extracts the blobs and firmware and opens a pull request in this repository
+# and in the vendor repository.
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Force a version (empty = latest)'
+        required: false
+      dry_run:
+        description: 'Extract only, open no pull requests'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: hyperos-update
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: device/xiaomi/piano
+
+      - name: Run
+        env:
+          FORCE_VERSION: ${{ inputs.version }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          BASE_BRANCH: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
+          # A token that can push to and open pull requests in the vendor repository.
+          VENDOR_TOKEN: ${{ secrets.VENDOR_TOKEN }}
+        run: bash device/xiaomi/piano/.github/scripts/hyperos-update.sh
+
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hyperos-update-log
+          path: |
+            work/extract.log
+            work/summary.md
+          if-no-files-found: ignore
