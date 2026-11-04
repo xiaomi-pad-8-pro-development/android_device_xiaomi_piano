@@ -182,8 +182,8 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 0
 # The bootloader also verifies pvmfw and countrycode through vbmeta; without
 # their descriptors libavb reports invalid metadata and the slot falls back.
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += \
-    --include_descriptors_from_image vendor/xiaomi/piano/avb/pvmfw.img \
-    --include_descriptors_from_image vendor/xiaomi/piano/avb/countrycode.img
+    --include_descriptors_from_image vendor/xiaomi/piano/radio/pvmfw.img \
+    --include_descriptors_from_image vendor/xiaomi/piano/radio/countrycode.img
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_BOOT_KEY_PATH := $(PIANO_AVB_KEY_PATH)

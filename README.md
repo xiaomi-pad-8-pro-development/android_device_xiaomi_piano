@@ -4,7 +4,7 @@
 | --- | --- |
 | Path | `device/xiaomi/piano` |
 | Android | 17 |
-| Firmware | HyperOS 4 China `OS4.0.5.0.XPYCNXM` (flash it first) |
+| Firmware | HyperOS 4 China `OS4.0.6.0.XPYCNXM`, shipped in the ROM (the vendor tree needs Git LFS) |
 
 ## Needs
 
