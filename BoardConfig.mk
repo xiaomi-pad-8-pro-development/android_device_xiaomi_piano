@@ -75,7 +75,9 @@ BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     erofs.reserved_pages=64 \
-    lz4asm.support=1
+    lz4asm.support=1 \
+    qcom_dload_mode.download_mode=0 \
+    firmware_class.path=/odm/firmware/o8
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
