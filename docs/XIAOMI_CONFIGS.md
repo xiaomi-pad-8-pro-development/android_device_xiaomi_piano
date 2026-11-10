@@ -73,10 +73,22 @@ Files: `odm/etc/thermal-*.conf` (47 profiles), `vendor/etc/thermal-map.conf`.
 
 Encryption (evidence, `mi_thermald`): AES-128-CBC with the key and IV both
 `thermalopenssl.h`. Both pointers are loaded from the GOT next to the
-`thermalopenssl.h` strings in `.data`. A second path derives a 32-byte key
-when `persist.vendor.aes_whitebox.encrypt` is set. It is not used by these
-files. `thermal-boost.conf`, the `chg-only` profiles and `thermald-devices.conf`
-use neither key.
+`thermalopenssl.h` strings in `.data`. A second path, used when
+`persist.vendor.aes_whitebox.encrypt` is set, runs a 32-byte hex string from
+`.data` through a white-box AES decrypt (`0xcd470`, tables at `0x52de0`).
+Emulated with Unicorn, it yields `6bc1bee22e409f96e93d7e117393172a`, the
+NIST AES test vector plaintext, used as key and IV. That key does not open
+`thermal-boost.conf`, so its key is still unknown. `thermald-devices.conf`
+and the `chg-only` profiles are plain text.
+
+`thermald-devices.conf` maps the device names used by the rules to Linux
+cooling devices (`cooling_name`, for example `gpu`, `battery`, `cdsp`,
+`pause-cpuN`, `cpu-clusterN`) or to sysfs nodes (`path`, mostly under
+`/sys/class/thermal/thermal_message` and the xm_power charger). Each entry
+has a default target and `select_higher`, which says whether the highest or
+the lowest request wins when several rules drive the same device. `cpu0` and
+`cpu6` are not in the file, so they are built into `mi_thermald`. Inference:
+they cap the frequency of CPU policy 0 and policy 6.
 
 The profiles use the Qualcomm thermal-engine format: `virtual` sensors that
 weight several thermistors, `monitor` rules and `ss` (step) rules with
@@ -94,7 +106,6 @@ thermistors):
 | `SS-CPU6` (cores 6-7) | 34 °C | 2.65 GHz, down to 1.02 GHz at 44 °C |
 | `MONITOR-GPU`, `MONITOR-BAT`, `MONITOR-BCL` | per rule | GPU, charge current, battery current limit |
 
-Status: `mi_thermald` stays. An open replacement must implement the virtual,
-monitor and ss rules and the device actions behind names like `cpu0`, `gpu`
-and `battery`. Those actions come from `thermald-devices.conf`, which is still
-encrypted.
+Status: `mi_thermald` stays for now. Everything an open replacement needs is
+now readable: the rules (virtual, monitor and ss) and the device map. It still
+has to be written and checked on the device against the stock daemon.
