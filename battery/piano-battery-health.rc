@@ -1,0 +1,11 @@
+# Open replacement for the Xiaomi battery anti-aging service: applies the stock
+# charge tables for the battery age. See docs/XIAOMI_CONFIGS.md.
+service piano-battery-health /vendor/bin/piano-battery-health
+    class hal
+    # The cdev and smart charge nodes are root only; SELinux limits the rest.
+    user root
+    group system
+
+# The stock rules also apply while charging with the tablet off.
+on charger
+    start piano-battery-health

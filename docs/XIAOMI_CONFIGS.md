@@ -61,8 +61,11 @@ the checksum field, so it rejects every buffer ("Invalid total_len: 0"). On
 this ROM the stock service is also blocked by SELinux from its persist
 folder.
 
-Status: the stock service stays until the driver header is fixed. With the
-layout known, an open service can build the same buffer from the plain JSON.
+Status: replaced by `piano-battery-health` (`battery/`). It decrypts the
+stock rules, applies LowSoh-FvDown, and sends the BasedOnCC table at boot and
+whenever the cycle count bucket changes. A host build of its packer gives
+496 bytes and checksum 12642 for the case above, the same as the stock
+service. The tables only take effect with the fixed mca driver header.
 
 ## mi_thermald
 

@@ -64,7 +64,6 @@ vendor.xiaomi.hardware.keyboardnanoapp_aidl.IKeyboardNanoapp_aidl/default   u:ob
 vendor.xiaomi.hardware.dtool1.IDtool/default                            u:object_r:vendor_hal_fingerprint_dtool1_service:s0
 vendor.xiaomi.aidl.miwill.IMiwillAIDLService/default  u:object_r:hal_miwillservice_service:s0
 vendor.xiaomi.aidl.minet.IMiNetAIDLService/default                 u:object_r:hal_minetaidlservice_service:s0
-vendor.xiaomi.hardware.batteryantiaging.IBatteryAntiAging/default  u:object_r:hal_batteryantiaging_service:s0
 vendor.xiaomi.hardware.cld_aidl.ICld/default                       u:object_r:hal_cld_service:s0
 vendor.xiaomi.hardware.fbo.IFbo/default                            u:object_r:hal_fbo_service:s0
 vendor.xiaomi.hardware.mimd2.IMimd/default                         u:object_r:hal_mimd_service:s0
