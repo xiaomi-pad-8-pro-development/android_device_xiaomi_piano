@@ -59,7 +59,6 @@ lib_fixups: lib_fixups_user_type = {
     (
         'vendor.qti.diaghal@1.0',
         'vendor.qti.diaghal-V1-ndk',
-        'vendor.qti.ImsRtpService-V1-ndk',
         'android.hardware.bluetooth.audio-impl',
         'libbluetooth_audio_session_aidl',
     ): lib_fixup_vendor_suffix,
@@ -163,13 +162,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'libaudio_aidl_conversion_common_ndk.so',
             'libaudio_aidl_conversion_common_ndk_xiaomi.so'
-        ),
-     (
-       'vendor/lib64/libsxrservice.so'
-     ): blob_fixup()
-        .replace_needed(
-            'android.hardware.common-V2-ndk_platform.so',
-            'android.hardware.common-V2-ndk.so'
         ),
     (
         'vendor/lib64/libqti-perfd.so',
