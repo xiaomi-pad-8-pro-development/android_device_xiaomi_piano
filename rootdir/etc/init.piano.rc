@@ -84,3 +84,8 @@ on boot
     # TCP buffer sizes from the stock minetd init script.
     write /proc/sys/net/ipv4/tcp_rmem "524288 1048576 16777216"
     write /proc/sys/net/ipv4/tcp_wmem "262144 524288 16777216"
+
+    # BBR with fq pacing, as the 6.6 kernel defaults to. The 6.12 kernel
+    # builds both but defaults to cubic and pfifo_fast.
+    write /proc/sys/net/core/default_qdisc fq
+    write /proc/sys/net/ipv4/tcp_congestion_control bbr
