@@ -1,0 +1,2 @@
+# Thermal profile for piano-thermald, set by Parts (tgame while a game is in front).
+system_public_prop(piano_thermald_profile_prop)

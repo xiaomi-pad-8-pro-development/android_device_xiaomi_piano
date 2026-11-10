@@ -268,6 +268,7 @@ vendor.minetd.enabled u:object_r:vendor_minetd_prop:s0
 # mi_thermald
 vendor.sys.thermal.bcl.  u:object_r:vendor_thermal_normal_prop:s0
 ro.vendor.piano.body_color u:object_r:vendor_piano_body_color_prop:s0 exact string
+vendor.piano.thermald.active u:object_r:vendor_piano_thermald_prop:s0 exact bool
 
 vendor.devauth.keyboard_connected u:object_r:vendor_security_devauth_keyboard_connected_prop:s0 exact bool
 

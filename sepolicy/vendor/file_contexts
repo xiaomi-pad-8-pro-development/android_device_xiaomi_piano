@@ -246,3 +246,4 @@
 # Keyboard cover authentication
 /(odm|vendor/odm)/bin/midevauthd u:object_r:hal_midevauth_default_exec:s0
 /vendor/bin/piano-battery-health u:object_r:piano_battery_health_exec:s0
+/vendor/bin/piano-thermald u:object_r:piano_thermald_exec:s0
