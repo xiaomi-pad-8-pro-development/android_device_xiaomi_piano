@@ -35,6 +35,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     checkpoint_gc \
+    piano-battery-health \
     otapreopt_script
 
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4

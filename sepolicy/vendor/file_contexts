@@ -207,13 +207,11 @@
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.cld_aidl-service     u:object_r:hal_cld_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.videoservice-service      u:object_r:hal_videoservice_default_exec:s0
 /(odm|vendor/odm|system/vendor)/bin/vendor\.xiaomi\.hardware\.mikeybag-service     u:object_r:hal_mikeybag_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service     u:object_r:hal_batteryantiaging_default_exec:s0
 /(odm|system/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.dtool1-service                 u:object_r:vendor_dtool_exec:s0
 /(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.keyboardnanoapp_aidl-service   u:object_r:nanoapp_aidl_exec:s0
 /data/vendor/ffu(/.*)?                                u:object_r:ffu_data_file:s0
 /data/vendor/miperf(/.*)?                           u:object_r:miperf_data_file:s0
 /data/vendor/ddr_freq(/.*)?                                u:object_r:ddr_freq_data_file:s0
-/data/vendor/batteryantiaging(/.*)?     u:object_r:batteryantiaging_cache_file:s0
 /sys/devices/platform/soc/1d84000.ufshc/ufseua(/.*)?    u:object_r:sysfs_memory:s0
 /sys/devices/platform/soc/1d84000.ufshc/ufssnapshot(/.*)?  u:object_r:sysfs_memory:s0
 /sys/devices/platform/soc/1d84000.ufshc/ufs_monitor(/.*)?  u:object_r:sysfs_memory:s0
@@ -247,3 +245,4 @@
 
 # Keyboard cover authentication
 /(odm|vendor/odm)/bin/midevauthd u:object_r:hal_midevauth_default_exec:s0
+/vendor/bin/piano-battery-health u:object_r:piano_battery_health_exec:s0

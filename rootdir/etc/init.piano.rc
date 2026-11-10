@@ -10,22 +10,14 @@ on init
     write /sys/block/sde/queue/scheduler ssg
     write /sys/block/sdf/queue/scheduler ssg
 
-# Stock battery anti-aging runs once at boot and tunes the charge voltage
-# from the battery's cycle count and health. The stock power-off charging
-# service and its charger fstab are left out.
+# piano-battery-health (battery/) replaces the stock battery anti-aging
+# service. The stock power-off charging service and its charger fstab are
+# left out.
 on post-fs-data
-    mkdir /data/vendor/batteryantiaging 0770 system system
     # Persist is mounted by the non-late fstab pass before post-fs-data. Read
     # the body colour before framework services start and select their
     # default wallpaper.
     exec_start piano-body-color
-
-service batteryantiaging /vendor/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service
-    interface aidl vendor.xiaomi.hardware.batteryantiaging.IBatteryAntiAging/default
-    class hal
-    user root
-    group system
-    oneshot
 
 service piano-body-color /vendor/bin/piano-body-color.sh
     user system

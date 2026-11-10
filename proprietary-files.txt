@@ -2840,15 +2840,6 @@ odm/lib64/libmidevauth.so|e437f5b0cf301e18a107c891e704b963052ceeb1
 odm/etc/init/vendor.xiaomi.hardware.aidl.midevauth@1.0-service.rc|9f1b0f24a2a86410013fd339280c75fe47712d54
 odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.aidl.midevauth.xml|1422874527154834fb2e79b5359f6a8863024554
 
-# Battery anti-aging
-vendor/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service|819ef2ad97d09cc7789efc62e298201bf3394b11
-vendor/lib64/vendor.xiaomi.hardware.batteryantiaging-V1-ndk.so|00d2074202c3c0bbdb0af5ada4f1ba70ac14e2a2
-vendor/lib64/libbaa_common.so|b81032ad4a0953bee3eca8a3666d401156be96cc
-vendor/lib64/libbaa_BasedOnCC_VolDown.so|52af1669c61e9f8206c36e1e1f66b5d103eb3380
-vendor/lib64/libbaa_ChargeInfo.so|87f663b1f6fe416cb5a2152dbd5ab2aa714df930
-vendor/lib64/libbaa_ChargerModeProtect.so|932034cf1622b4b0b81b235dff449f96546927ae
-vendor/lib64/libbaa_FreqChgFvDown.so|2706184677564b3df71e52fe92f9205ae9b028b8
-vendor/lib64/libbaa_LowSohFvDown.so|f0387ca742a6b524a69189041977af850defb13b
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.batteryantiaging.xml|02e0c125f4a0be5b439187c6a061451da66dbe12
+# Battery anti-aging rules, read by piano-battery-health (battery/)
 odm/etc/charger/BAA_config_piano.json|4ec9712a99e05244928a1bb3d0165f2fd52b057c
 odm/etc/charger/BAA_config_common.json|5b8dd4bf47188197646a811e4efeb52317ef9c14

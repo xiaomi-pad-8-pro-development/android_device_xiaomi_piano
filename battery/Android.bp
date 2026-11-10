@@ -1,0 +1,17 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "piano-battery-health",
+    init_rc: ["piano-battery-health.rc"],
+    vendor: true,
+    srcs: ["piano-battery-health.cpp"],
+    shared_libs: [
+        "libbase",
+        "libcrypto",
+        "libjsoncpp",
+        "liblog",
+    ],
+}

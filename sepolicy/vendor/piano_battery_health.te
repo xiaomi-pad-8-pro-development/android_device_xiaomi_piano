@@ -1,0 +1,21 @@
+type piano_battery_health, domain;
+type piano_battery_health_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(piano_battery_health)
+
+# Stock rules in /odm/etc/charger.
+allow piano_battery_health batteryantiaging_cfg_file:dir r_dir_perms;
+allow piano_battery_health batteryantiaging_cfg_file:file r_file_perms;
+
+# Cycle count, health and the smart charge nodes.
+r_dir_file(piano_battery_health, vendor_sysfs_battery_supply)
+allow piano_battery_health vendor_sysfs_battery_supply:file w_file_perms;
+r_dir_file(piano_battery_health, vendor_sysfs_qcom_battery)
+allow piano_battery_health vendor_sysfs_qcom_battery:file w_file_perms;
+r_dir_file(piano_battery_health, vendor_sysfs_xm_power)
+allow piano_battery_health vendor_sysfs_xm_power:file w_file_perms;
+
+# Charge tables go to the mca smart charge driver.
+allow piano_battery_health vendor_smart_charge_device:chr_file { rw_file_perms ioctl };
+
+get_prop(piano_battery_health, bootloader_prop)

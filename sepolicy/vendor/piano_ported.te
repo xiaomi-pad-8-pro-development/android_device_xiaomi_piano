@@ -1,5 +1,4 @@
 # Ported from the Global 304 vendor and odm policy.
-type batteryantiaging_cache_file, data_file_type, file_type;
 type batteryantiaging_cfg_file, file_type, vendor_file_type;
 type ddr_freq, domain;
 type ddr_freq_data_file, data_file_type, file_type;
@@ -9,8 +8,6 @@ type ffu_data_file, data_file_type, file_type;
 type ffu_exec, exec_type, file_type, vendor_file_type;
 type ffu_partition, dev_type;
 type gsort_block_device, dev_type;
-type hal_batteryantiaging_default, domain;
-type hal_batteryantiaging_default_exec, exec_type, file_type, vendor_file_type;
 type hal_cld_default, domain;
 type hal_cld_default_exec, exec_type, file_type, vendor_file_type;
 type hal_fbo_default, domain;
@@ -64,7 +61,6 @@ vendor_restricted_prop(vendor_video_mi_prop)
 vendor_restricted_prop(vendor_wlan_chip_prop)
 init_daemon_domain(ddr_freq)
 init_daemon_domain(ffu)
-init_daemon_domain(hal_batteryantiaging_default)
 init_daemon_domain(hal_cld_default)
 init_daemon_domain(hal_fbo_default)
 init_daemon_domain(hal_mikeybag_default)
@@ -288,38 +284,6 @@ allow hal_miperf_default miperf_data_file:dir { read write watch add_name remove
 allow hal_miperf_default miperf_data_file:file { read write create getattr setattr unlink rename open };
 allow hal_miperf_default system_server:binder { call };
 allow hal_miperf_default vendor_system_prop:file { read getattr open };
-allow hal_batteryantiaging_default hal_batteryantiaging_default_exec:file { read getattr map execute open entrypoint };
-binder_call(hal_batteryantiaging_default, servicemanager)
-allow hal_batteryantiaging_default self:netlink_kobject_uevent_socket { read create bind getopt setopt };
-allow hal_batteryantiaging_default kmsg_device:chr_file { read write getattr open };
-allow hal_batteryantiaging_default sysfs:dir { read getattr open search };
-allow hal_batteryantiaging_default sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_battery_supply:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_batteryantiaging_default vendor_sysfs_battery_supply:file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_battery_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_battery_supply:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_qcom_battery:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_batteryantiaging_default vendor_sysfs_qcom_battery:file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_qcom_battery:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_qcom_battery:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_usb_supply:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_batteryantiaging_default vendor_sysfs_usb_supply:file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_usb_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_usb_supply:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default property_socket:sock_file { write };
-allow hal_batteryantiaging_default vendor_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
-allow hal_batteryantiaging_default vendor_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
-allow hal_batteryantiaging_default batteryantiaging_cfg_file:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_batteryantiaging_default batteryantiaging_cfg_file:file { ioctl read getattr lock map open watch watch_reads };
-allow hal_batteryantiaging_default batteryantiaging_cache_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
-allow hal_batteryantiaging_default batteryantiaging_cache_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_xm_power:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_batteryantiaging_default vendor_sysfs_xm_power:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default vendor_sysfs_xm_power:chr_file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default property_socket:sock_file { write };
-allow hal_batteryantiaging_default init:unix_stream_socket { connectto };
-allow hal_batteryantiaging_default vendor_batteryantiaging_prop:property_service { set };
-allow hal_batteryantiaging_default vendor_batteryantiaging_prop:file { read getattr map open };
 allow hal_mikeybag_default hal_mikeybag_default_exec:file { read getattr map execute open entrypoint };
 binder_call(hal_mikeybag_default, servicemanager)
 allow hal_mikeybag_default tee_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
@@ -395,6 +359,3 @@ allow minetd vendor_wlan_chip_prop:file { read getattr open };
 
 # Battery anti-aging writes charge limits through the smart charge
 # device.
-allow hal_batteryantiaging_default vendor_smart_charge_device:chr_file rw_file_perms;
-allow hal_batteryantiaging_default mnt_vendor_file:dir search;
-r_dir_file(hal_batteryantiaging_default, vendor_persist_file)
