@@ -106,6 +106,19 @@ thermistors):
 | `SS-CPU6` (cores 6-7) | 34 °C | 2.65 GHz, down to 1.02 GHz at 44 °C |
 | `MONITOR-GPU`, `MONITOR-BAT`, `MONITOR-BCL` | per rule | GPU, charge current, battery current limit |
 
-Status: `mi_thermald` stays for now. Everything an open replacement needs is
-now readable: the rules (virtual, monitor and ss) and the device map. It still
-has to be written and checked on the device against the stock daemon.
+Status: `piano-thermald` (`thermal/`) runs next to `mi_thermald` in shadow
+mode: it reads the same rules and device map and logs what it would set. A
+host test against a fake sysfs tree steps through the `thermal-normal` trips
+and clears as expected (for example `cpu0` 2.75 GHz down to 749 MHz and back).
+To hand over control, compare its log with the stock daemon on the device,
+then `setprop vendor.piano.thermald.active true`, which also stops
+`mi_thermald`. CPU caps go through `thermal_message/cpu_limits` (`cpuN <kHz>`, held by the
+mi_thermal driver as a kernel QoS request) when it exists, else
+`scaling_max_freq`. `boost_limit` and `video_mode` are ignored on purpose:
+`boost_limit` only gates mi_thermald's own boost feature, and `video_mode`
+does not appear in the stock binary at all.
+
+`sys.piano.thermald.profile=<name>` (set by Parts while a game is in front) swaps in the rules of
+`thermal-<name>.conf` (sensors stay from `thermal-normal`); empty or
+`normal` goes back. Host test: with `tgame` the CPU keeps 2.75 / 3.07 GHz up
+to 48 °C, where `normal` starts limiting at 34-37 °C.

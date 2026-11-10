@@ -51,3 +51,6 @@ vendor_public_prop(vendor_security_devauth_keyboard_connected_prop)
 # only this cross-partition property as a core extension; retain vendor ownership.
 typeattribute vendor_security_devauth_keyboard_connected_prop extended_core_property_type;
 vendor_restricted_prop(vendor_piano_free_pps_prop)
+
+# piano-thermald shadow or active mode
+vendor_internal_prop(vendor_piano_thermald_prop)

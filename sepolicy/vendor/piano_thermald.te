@@ -1,0 +1,25 @@
+type piano_thermald, domain;
+type piano_thermald_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(piano_thermald)
+
+# Shadow or active mode.
+get_prop(piano_thermald, vendor_piano_thermald_prop)
+get_prop(piano_thermald, piano_thermald_profile_prop)
+# Profiles in /odm/etc.
+allow piano_thermald vendor_configs_file:file r_file_perms;
+
+# Sensors.
+r_dir_file(piano_thermald, sysfs_thermal)
+r_dir_file(piano_thermald, vendor_sysfs_battery_supply)
+r_dir_file(piano_thermald, vendor_sysfs_qcom_battery)
+r_dir_file(piano_thermald, sysfs_poweraware)
+
+# Cooling devices, CPU caps and the Xiaomi thermal nodes.
+allow piano_thermald sysfs_thermal:file w_file_perms;
+allow piano_thermald sysfs_devices_system_cpu:file rw_file_perms;
+allow piano_thermald sys_thermal_wifi_limit:file rw_file_perms;
+r_dir_file(piano_thermald, vendor_sysfs_xm_power)
+allow piano_thermald vendor_sysfs_xm_power:file w_file_perms;
+allow piano_thermald sysfs_power_save:dir r_dir_perms;
+allow piano_thermald sysfs_power_save:file rw_file_perms;

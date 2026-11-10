@@ -1,0 +1,13 @@
+# Open replacement for mi_thermald. It only logs what it would set until
+# vendor.piano.thermald.active is true; see docs/XIAOMI_CONFIGS.md.
+service piano-thermald /vendor/bin/piano-thermald
+    class main
+    user root
+    group system
+
+# Hand thermal control to piano-thermald.
+on property:vendor.piano.thermald.active=true
+    stop mi_thermald
+
+on property:vendor.piano.thermald.active=false
+    start mi_thermald
