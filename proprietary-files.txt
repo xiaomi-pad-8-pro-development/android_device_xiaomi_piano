@@ -544,11 +544,9 @@ vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|cacb134fab84cb55f607fcf
 vendor/etc/vintf/manifest/vendor.qti.hardware.dsp-service.xml|c02c767856a1e8ef25441f3e0243487ac3829367
 vendor/lib64/vendor.qti.hardware.dsp-V1-ndk.so|e63ff5a69cb5f526f1d40c5bac3fdc2f9fb40a9f
 
-# Dumpstate
-vendor/bin/hw/android.hardware.dumpstate-service.xiaomi|b48a85a86c5b7933270dc6b45f505848f8fed5da
-vendor/etc/init/dumpstate-xiaomi.rc|5bb8bb7ccc1c351c075963dbeb05fba9c1dee0ae
+# Blackbox, served by hypsys_vendor. The Xiaomi dumpstate HAL that also used
+# it only adds vendor sections to bug reports and is left out.
 vendor/etc/vintf/manifest/manifest_blackbox.xml|eb1e4423585e84c35d6993469a5323e327d4e6d9
-vendor/etc/vintf/manifest/dumpstate-xiaomi.xml|68a2f78a08e0403b23b1424bcab1c491f9d075b9
 vendor/lib64/vendor.xiaomi.hardware.blackbox-V1-ndk.so|799fbe7ea44da5e0dad744158188818db9715e90
 
 # EMBMS
