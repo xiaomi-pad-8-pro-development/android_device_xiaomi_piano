@@ -27,6 +27,15 @@ m bacon
 
 Release builds set `PIANO_AVB_KEY_PATH`; otherwise the AOSP test key is used.
 
+## Open replacements for Xiaomi services
+
+| Service | Replaces | Notes |
+| --- | --- | --- |
+| `battery/piano-battery-health` | Xiaomi battery anti-aging | Reads the stock rules and sends the charge table for the battery's age |
+| `thermal/piano-thermald` | `mi_thermald` | Runs next to it and only logs until `vendor.piano.thermald.active` is `true` |
+
+The formats they read are in [docs/XIAOMI_CONFIGS.md](docs/XIAOMI_CONFIGS.md).
+
 ## Credits
 
 Parts adapted from [xiaomi-haotian-devs sm8750-common](https://github.com/xiaomi-haotian-devs/android_device_xiaomi_sm8750-common) (`1c858a2`). Layout follows [xiaomi-pad-8-development](https://github.com/xiaomi-pad-8-development).
