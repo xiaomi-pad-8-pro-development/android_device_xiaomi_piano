@@ -52,11 +52,6 @@ hal_attribute(tidaservice)
 hal_attribute(idmanager)
 hal_attribute(misyscore)
 
-# Micharge
-attribute hal_micharge;
-attribute hal_micharge_server;
-attribute hal_micharge_client;
-
 # SLA
 hal_attribute(slaaidlservice)
 

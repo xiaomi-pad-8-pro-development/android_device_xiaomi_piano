@@ -11,7 +11,6 @@ vendor.xiaomi.hardware.quickcamera.IQuickCameraService/default u:object_r:hal_qu
 vendor.xiaomi.sensor.camera.IMiCam/default  u:object_r:vendor_hal_misensor_camera_service:s0
 
 # Charge
-vendor.xiaomi.hardware.micharge.IMiCharge/default   u:object_r:hal_micharge_service:s0
 
 # Citsensor
 vendor.xiaomi.sensor.citsensorservice.ICitSensorService/default   u:object_r:vendor_hal_citsensorservice_xiaomi_service:s0
@@ -65,7 +64,6 @@ vendor.xiaomi.hardware.dtool1.IDtool/default                            u:object
 vendor.xiaomi.aidl.miwill.IMiwillAIDLService/default  u:object_r:hal_miwillservice_service:s0
 vendor.xiaomi.aidl.minet.IMiNetAIDLService/default                 u:object_r:hal_minetaidlservice_service:s0
 vendor.xiaomi.hardware.cld_aidl.ICld/default                       u:object_r:hal_cld_service:s0
-vendor.xiaomi.hardware.fbo.IFbo/default                            u:object_r:hal_fbo_service:s0
 vendor.xiaomi.hardware.mimd2.IMimd/default                         u:object_r:hal_mimd_service:s0
 vendor.xiaomi.hardware.miperf2.IMiPerf/default                     u:object_r:hal_miperf_service:s0
 

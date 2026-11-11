@@ -1,13 +1,11 @@
 # Xiaomi AIDL services that stock HyperOS labels in its vendor policy.
 # Without these they register as default_android_service.
 type hal_cld_service, hal_service_type, protected_service, service_manager_type;
-type hal_fbo_service, hal_service_type, protected_service, service_manager_type;
 type hal_mimd_service, hal_service_type, protected_service, service_manager_type;
 type hal_minetaidlservice_service, hal_service_type, protected_service, service_manager_type;
 type hal_miperf_service, hal_service_type, protected_service, service_manager_type;
 
 add_service(hal_cld_default, hal_cld_service)
-add_service(hal_fbo_default, hal_fbo_service)
 add_service(hal_mimd_default, hal_mimd_service)
 add_service(hal_minetaidlservice_default, hal_minetaidlservice_service)
 add_service(hal_miperf_default, hal_miperf_service)

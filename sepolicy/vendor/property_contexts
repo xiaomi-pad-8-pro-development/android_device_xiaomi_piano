@@ -257,7 +257,6 @@ ro.hardware.wlan.       u:object_r:vendor_wlan_chip_prop:s0
 vendor.ffu.is.valid     u:object_r:vendor_ffu_prop:s0
 vendor.ffu.is.start     u:object_r:vendor_ffu_prop:s0
 vendor.ddr_freq.is.valid     u:object_r:vendor_ddr_freq_prop:s0
-persist.vendor.memory.fbo2status        u:object_r:vendor_fbo_prop:s0
 persist.vendor.batteryantiaging     u:object_r:vendor_batteryantiaging_prop:s0
 ro.vendor.video.codecmanager.enable         u:object_r:vendor_video_mi_prop:s0
 ro.vendor.codec.resourcectl.enable          u:object_r:vendor_video_mi_prop:s0
