@@ -59,7 +59,6 @@
 /vendor/lib/rfsa/adsp/libQnnHtpV79Skel\.so u:object_r:same_process_hal_file:s0
 
 # Charge
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.micharge-service u:object_r:hal_micharge_default_exec:s0
 /dev/smart_charge_cdev u:object_r:vendor_smart_charge_device:s0
 
 # CitSensor
@@ -199,7 +198,6 @@
 /(vendor|system/vendor)/bin/ddr_freq                  		u:object_r:ddr_freq_exec:s0
 /(vendor|odm|system/vendor)/etc/charger(/.*)?       u:object_r:batteryantiaging_cfg_file:s0
 /(odm|vendor/odm|vendor|system/vendor)/bin/ntag_tool           u:object_r:vendor_ntagtool_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.fbo-service     u:object_r:hal_fbo_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.mimd2-service      u:object_r:hal_mimd_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.aidl.minet@1.0-service u:object_r:hal_minetaidlservice_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.aidl\.miwill\@1\.0-service u:object_r:hal_miwillservice_default_exec:s0

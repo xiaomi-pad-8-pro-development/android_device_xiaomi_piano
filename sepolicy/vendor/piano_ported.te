@@ -10,8 +10,6 @@ type ffu_partition, dev_type;
 type gsort_block_device, dev_type;
 type hal_cld_default, domain;
 type hal_cld_default_exec, exec_type, file_type, vendor_file_type;
-type hal_fbo_default, domain;
-type hal_fbo_default_exec, exec_type, file_type, vendor_file_type;
 type hal_keyboardnanoapp_service, service_manager_type;
 type hal_mikeybag_default, domain;
 type hal_mikeybag_default_exec, exec_type, file_type, vendor_file_type;
@@ -46,7 +44,6 @@ vendor_restricted_prop(vendor_batteryantiaging_prop)
 vendor_restricted_prop(vendor_ddr_freq_prop)
 type vendor_dtool, domain;
 type vendor_dtool_exec, exec_type, file_type, vendor_file_type;
-vendor_restricted_prop(vendor_fbo_prop)
 vendor_restricted_prop(vendor_ffu_prop)
 type vendor_hal_fingerprint_dtool1_service, service_manager_type;
 type vendor_hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
@@ -62,7 +59,6 @@ vendor_restricted_prop(vendor_wlan_chip_prop)
 init_daemon_domain(ddr_freq)
 init_daemon_domain(ffu)
 init_daemon_domain(hal_cld_default)
-init_daemon_domain(hal_fbo_default)
 init_daemon_domain(hal_mikeybag_default)
 init_daemon_domain(hal_mimd_default)
 init_daemon_domain(hal_minetaidlservice_default)
@@ -235,37 +231,6 @@ allow hal_cld_default sysfs_devices_block:file { ioctl read write getattr lock a
 allow hal_cld_default block_device:dir { search };
 allow hal_cld_default gsort_block_device:lnk_file { read write open };
 allow hal_cld_default gsort_block_device:blk_file { read write open };
-allow hal_fbo_default hal_fbo_default_exec:file { read getattr map execute open entrypoint };
-allow hal_fbo_default system_server:binder { call };
-binder_call(hal_fbo_default, servicemanager)
-allow hal_fbo_default sysfs:dir { read getattr open search };
-allow hal_fbo_default sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_fbo_default self:netlink_kobject_uevent_socket { read write create getattr setattr lock append map bind connect getopt setopt shutdown };
-allow hal_fbo_default block_device:dir { search };
-allow hal_fbo_default system_data_file:dir { search };
-allow hal_fbo_default sysfs_memory:dir { read getattr open search };
-allow hal_fbo_default sysfs_memory:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_fbo_default dm_device:blk_file { getattr };
-allow hal_fbo_default sysfs_fs_f2fs:dir { read getattr open search };
-allow hal_fbo_default sysfs_fs_f2fs:file { write getattr lock append map open };
-allow hal_fbo_default sysfs_devices_block:dir { search };
-allow hal_fbo_default sysfs_devices_block:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_fbo_default proc_drop_caches:file { write lock append map open };
-allow hal_fbo_default block_device:dir { search };
-allow hal_fbo_default gsort_block_device:lnk_file { read write open };
-allow hal_fbo_default gsort_block_device:blk_file { read write open };
-allow hal_fbo_default snapshot_prop:file { read getattr map open };
-allow hal_fbo_default property_socket:sock_file { write };
-allow hal_fbo_default init:unix_stream_socket { connectto };
-allow hal_fbo_default snapshot_prop:property_service { set };
-allow hal_fbo_default snapshot_prop:file { read getattr map open };
-allow hal_fbo_default vendor_fbo_prop:file { read getattr map open };
-allow hal_fbo_default property_socket:sock_file { write };
-allow hal_fbo_default init:unix_stream_socket { connectto };
-allow hal_fbo_default vendor_fbo_prop:property_service { set };
-allow hal_fbo_default vendor_fbo_prop:file { read getattr map open };
-allow hal_fbo_default init:unix_stream_socket { connectto };
-allow hal_fbo_default property_socket:sock_file { write };
 allow hal_miperf_default hal_miperf_default_exec:file { read getattr map execute open entrypoint };
 binder_call(hal_miperf_default, servicemanager)
 allow hal_miperf_default mnt_vendor_file:dir { read getattr open search };

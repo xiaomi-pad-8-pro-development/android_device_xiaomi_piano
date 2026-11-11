@@ -60,14 +60,6 @@
         </interface>
     </hal>
     <hal format="aidl">
-        <name>vendor.xiaomi.hardware.micharge</name>
-        <version>2</version>
-        <interface>
-            <name>IMiCharge</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
         <name>vendor.xiaomi.hw.touchfeature</name>
         <version>1</version>
         <interface>
@@ -104,14 +96,6 @@
         <version>1</version>
         <interface>
             <name>ICld</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.fbo</name>
-        <version>1</version>
-        <interface>
-            <name>IFbo</name>
             <instance>default</instance>
         </interface>
     </hal>
