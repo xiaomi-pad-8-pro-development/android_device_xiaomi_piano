@@ -33,6 +33,7 @@ Release builds set `PIANO_AVB_KEY_PATH`; otherwise the AOSP test key is used.
 | --- | --- | --- |
 | `battery/piano-battery-health` | Xiaomi battery anti-aging | Reads the stock rules and sends the charge table for the battery's age |
 | `thermal/piano-thermald` | `mi_thermald` | Runs next to it and only logs until `vendor.piano.thermald.active` is `true` |
+| `ir/android.hardware.ir-service.piano` | `consumerir.qcom.so` | Same SPI bit stream as stock, checked byte for byte |
 
 The formats they read are in [docs/XIAOMI_CONFIGS.md](docs/XIAOMI_CONFIGS.md).
 

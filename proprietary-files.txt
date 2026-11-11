@@ -710,9 +710,6 @@ vendor/lib64/vendor.qti.diaghal-V1-ndk.so;MODULE_SUFFIX=-vendor|346712dc40cfed49
 
 # Init
 
-# IR
-odm/lib64/hw/consumerir.qcom.so|ced3a5193c81769c23deed853b15d8a4a3d1fe85
-
 # Kernel
 vendor/bin/system_dlkm_modprobe.sh|8eae15a0da114b1365f1356a981e6736d3ec9a43|196a3aa49d51a4a0380c7c31edaf717c866e6a8e
 vendor/bin/vendor_modprobe.sh|a6d743f391f5512234529e928a8dc000da5ac267
