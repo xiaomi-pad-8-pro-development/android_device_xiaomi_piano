@@ -1,0 +1,18 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "android.hardware.ir-service.piano",
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.ir-service.piano.rc"],
+    vintf_fragments: ["android.hardware.ir-service.piano.xml"],
+    vendor: true,
+    srcs: ["service.cpp"],
+    shared_libs: [
+        "android.hardware.ir-V1-ndk",
+        "libbase",
+        "libbinder_ndk",
+    ],
+}

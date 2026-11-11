@@ -122,3 +122,21 @@ does not appear in the stock binary at all.
 `thermal-<name>.conf` (sensors stay from `thermal-normal`); empty or
 `normal` goes back. Host test: with `tgame` the CPU keeps 2.75 / 3.07 GHz up
 to 48 °C, where `normal` starts limiting at 34-37 °C.
+
+## IR blaster (`consumerir.qcom.so`)
+
+The IR LED hangs off SPI. `/dev/ir_spi` (`drivers/media/rc/ir-spi.c`) shifts
+the written buffer out at 1.92 MHz, 32 bits per word, MSB first;
+`LIRC_SET_SEND_MODE` is reused to set the buffer length in bytes.
+
+The stock HAL builds that buffer from a pattern like this:
+
+- End time of each mark/space = running sum of the pattern minus 5 us. The
+  total must stay below 0x111112 us.
+- Bits = total * 1.92; bytes rounded up to whole 1 KiB blocks, zero padded.
+- One carrier cycle = round(1920000 / carrier) bits, of which the first 40 %
+  are on. The cycle counter restarts at every space.
+- Carriers offered: 30, 33, 36, 38, 40 and 56 kHz.
+
+`ir/IrSpiEncoder.h` follows the same steps; run against the stock library in
+Unicorn it gives identical buffers for NEC frames, long and invalid patterns.
