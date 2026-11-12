@@ -1,6 +1,5 @@
 hal_client_domain(hal_audio_default, hal_aidl_dms)
 hal_client_domain(hal_audio_default, hal_mediaeventgatherservice)
-hal_client_domain(hal_audio_default, hal_seaaudio)
 unix_socket_connect(hal_audio_default, property, hal_sensors_default)
 
 get_prop(hal_audio_default, vendor_audio_cloud_ctrl_mi_prop)

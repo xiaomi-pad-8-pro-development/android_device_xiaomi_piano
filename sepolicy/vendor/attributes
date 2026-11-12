@@ -33,9 +33,6 @@ attribute hal_mediaeventgatherservice_server;
 hal_attribute(ozonotify)
 
 # SeaAudio
-attribute hal_seaaudio;
-attribute hal_seaaudio_client;
-attribute hal_seaaudio_server;
 
 # Hypsys
 attribute hal_hypsys_vendor_service_client;

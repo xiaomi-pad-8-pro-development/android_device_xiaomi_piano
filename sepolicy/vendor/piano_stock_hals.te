@@ -11,8 +11,6 @@ allow hal_audio_default hal_mediaeventgatherservice_service:service_manager { fi
 binder_call(hal_audio_default, hal_ozonotify)
 allow hal_audio_default hal_ozonotify:fd { use };
 allow hal_audio_default hal_ozonotify_service:service_manager { find };
-binder_call(hal_audio_default, hal_seaaudio)
-allow hal_audio_default hal_seaaudio:fd { use };
 allow hal_audio_default hal_sensors_default:unix_stream_socket { connectto };
 allow hal_audio_default init:unix_stream_socket { connectto };
 allow hal_audio_default kernel:system { syslog_read };

@@ -331,14 +331,6 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.seaaudio</name>
-        <version>1</version>
-        <interface>
-            <name>ISeaAudio</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>vendor.xiaomi.sensor.camera</name>
         <interface>
             <name>IMiCam</name>

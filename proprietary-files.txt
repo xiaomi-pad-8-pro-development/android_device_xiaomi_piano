@@ -90,16 +90,12 @@ vendor/lib64/libadsprpc.so|aaa00c498fb2b680a803e03e6e68dcfe0214767d
 vendor/lib64/libloadalgo_stub.so|d86e36751a542aab32a393585f9d534fddd7c5ba
 
 # Audio
-odm/bin/hw/vendor.xiaomi.hardware.seaaudio-service|6c1d83c7fe6b3edb955d3d8e451c0df67ce9739e
 odm/etc/audio/hrtf5c.bin|28111884a4c0655789fa4f62bc38508983f90b78
 odm/etc/audio/silent-3sec.wav|fd5ed0fb4c9bb0196dca71f9b4aa00e5d166d56e
-odm/etc/init/vendor.xiaomi.hardware.seaaudio.rc|20703423f91a46ad7e04d7b0dad51e7c950b64be
-odm/etc/vintf/manifest/vendor.xiaomi.hardware.seaaudio.xml|589aa9d40529a562a4728a7e44cc161952364f20
 odm/lib64/libaudioroute_ext.so|75ec27aa6b8b0af6d098641f940ea7d18e80648a|47d12629318c83f40f8b49d8bda10add4fe3c32d
 odm/lib64/libcrussp.so|1d00aa51493bbbfbe9a4e5dacd81c7ef74f4326f
 odm/lib64/libfsalgocal.so|542c58644dfdfb904ebf5909ed185ffeb5de4514
 odm/lib64/libwindns.so;DISABLE_CHECKELF|6ffa870c117cd2912624581fde340dea0f50d3d1
-odm/lib64/vendor.xiaomi.hardware.seaaudio-V1-ndk.so|c83bb50fe3adab54675d2b3e04952d4c1fe4dd21
 vendor/etc/hrtf5c.bin|4a88db8a712156ac6631971a7a4d383b156fba8c
 vendor/etc/init/audiohalservice_qti.rc|75e368956879b06056816f50380a2618242e5f79|9bd87ec962d9f3d17817772abcb98b3d1bfdc787
 vendor/etc/models/acd/environment.eai|3a17c7a8293ced4cde26f626fd4ce8bdfd2989de
