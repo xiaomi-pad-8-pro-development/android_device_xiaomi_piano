@@ -1009,9 +1009,9 @@ on property:sys.boot_completed=1 && property:ro.build.type=user && property:ro.d
     chmod 0666 /sys/class/thermal/thermal_zone66/temp
     chmod 0666 /sys/class/thermal/thermal_zone65/temp
 
-# Bring-up debugging: expose a root, unauthenticated USB adbd even when the
-# framework never reaches the developer-options service.
-on boot
+# Bring-up debugging: start USB adbd even when the framework never reaches
+# the developer-options service. Debuggable builds only.
+on boot && property:ro.debuggable=1
     setprop service.adb.root 1
     setprop persist.sys.usb.config adb
     setprop sys.usb.config none
