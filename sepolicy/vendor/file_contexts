@@ -33,7 +33,6 @@
 /odm/lib(64)?/libmialgo_utils\.so u:object_r:same_process_hal_file:s0
 /odm/lib(64)?/libmiocr\.so u:object_r:same_process_hal_file:s0
 /odm/lib(64)?/libxmi_slow_motion_mein\.so u:object_r:same_process_hal_file:s0
-/vendor/data/model/seg_quantized\.serialized\.8750\.pertensor_512_cls3r\.bin u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libPlatformValidatorShared\.so u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libQnnHtpNetRunExtensions\.so u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libQnnHtpV79Stub\.so u:object_r:same_process_hal_file:s0
@@ -100,13 +99,11 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi\.sm8750 u:object_r:hal_fingerprint_default_exec:s0
 /odm/bin/hw/mfp-daemon u:object_r:hal_fingerprint_default_exec:s0
-/odm/lib(64)?/libcamxexternalformatutils\.so u:object_r:same_process_hal_file:s0
 
 # GNSS
 /odm/bin/hw/android\.hardware\.gnss-aidl-service-qti u:object_r:vendor_hal_gnss_qti_exec:s0
 
 # HypSys
-/vendor/bin/hw/xiaomi\.system\.hypsys\.common-service    u:object_r:hal_hypsys_vendor_exec:s0
 /vendor/bin/hypsys_vendor                                u:object_r:hal_hypsys_vendor_exec:s0
 
 # IR
