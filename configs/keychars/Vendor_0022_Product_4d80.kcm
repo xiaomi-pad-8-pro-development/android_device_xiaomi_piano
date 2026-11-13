@@ -1,0 +1,17 @@
+type FULL
+
+key BUTTON_7 {
+    base:                               none
+}
+
+key BUTTON_8 {
+    base:                               none
+}
+
+key BUTTON_9 {
+    base:                               none
+}
+
+key BUTTON_10 {
+    base:                               none
+}

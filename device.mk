@@ -280,9 +280,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/Vendor_15d9_Product_00a3.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_15d9_Product_00a3.idc \
     $(LOCAL_PATH)/configs/keylayout/Vendor_15d9_Product_00a3.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_15d9_Product_00a3.kl
 
-# Focus Pen 3: its touch-film buttons must not type characters, like stock.
+# Focus Pen Pro (5081) and Focus Pen (4d80): their gesture buttons must not
+# type characters and their keys must not wake the tablet, like stock.
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/Vendor_0022_Product_4d80.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_0022_Product_4d80.idc \
     $(LOCAL_PATH)/configs/idc/Vendor_0022_Product_5081.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_0022_Product_5081.idc \
+    $(LOCAL_PATH)/configs/keychars/Vendor_0022_Product_4d80.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_4d80.kcm \
     $(LOCAL_PATH)/configs/keychars/Vendor_0022_Product_5081.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_5081.kcm
 
 # Pen tap on the dark screen wakes the tablet for a quick note, like stock.
