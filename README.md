@@ -10,11 +10,12 @@
 
 | Path | Repository |
 | --- | --- |
-| `device/xiaomi/piano-kernel` | [kernel prebuilts](https://github.com/xiaomi-pad-8-pro-development/android_device_xiaomi_piano-kernel) (`seventeen` plain, `seventeen-ksu` KernelSU) |
+| `device/xiaomi/piano-kernel` | [kernel prebuilts](https://github.com/xiaomi-pad-8-pro-development/android_device_xiaomi_piano-kernel) (`6.6` plain, `6.6-ksu` KernelSU-Next) |
 | `vendor/xiaomi/piano` | [vendor](https://github.com/xiaomi-pad-8-pro-development/android_vendor_xiaomi_piano) |
 | `hardware/xiaomi` | [LineageOS](https://github.com/LineageOS/android_hardware_xiaomi) |
+| `hardware/qcom-caf/thermal` | [thermal HAL](https://github.com/xiaomi-pad-8-pro-development/android_hardware_qcom_thermal) |
 
-Optional trees from [local_manifests](https://github.com/xiaomi-pad-8-pro-development/local_manifests) are picked up when synced.
+All of these come from `piano.xml`. Optional trees from [local_manifests](https://github.com/xiaomi-pad-8-pro-development/local_manifests) are picked up when synced.
 
 ## Build
 
