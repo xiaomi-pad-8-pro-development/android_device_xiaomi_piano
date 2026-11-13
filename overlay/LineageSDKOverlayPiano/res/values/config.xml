@@ -9,14 +9,16 @@
          PULSATING + BATTERY_LED). -->
     <integer name="config_deviceLightCapabilities">75</integer>
 
-    <!-- Focus Pen buttons -->
+    <!-- Focus Pen buttons and the keyboard cover Do Not Disturb key -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
         <item>/system_ext/priv-app/LineageParts/LineageParts.apk</item>
         <item>/system_ext/priv-app/XiaomiStylus/XiaomiStylus.apk</item>
+        <item>/system_ext/priv-app/XiaomiKeyboard/XiaomiKeyboard.apk</item>
     </string-array>
 
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
         <item>org.lineageos.xiaomistylus.KeyHandler</item>
+        <item>org.lineageos.xiaomikeyboard.KeyHandler</item>
     </string-array>
 </resources>
