@@ -8,9 +8,6 @@ set_prop(vendor_init, vendor_wlan_chip_prop)
 allow vendor_init proc_hung_task:file w_file_perms;
 allow vendor_init migt_dev:chr_file getattr;
 
-# mi_thermald reports when the BCL setup is done.
-set_prop(mi_thermald, vendor_thermal_normal_prop)
-
 # /sys/kernel/reserve_pool: Xiaomi's memory reserve, init writes the pid.
 type vendor_sysfs_reserve_pool, sysfs_type, fs_type;
 allow init vendor_sysfs_reserve_pool:dir search;

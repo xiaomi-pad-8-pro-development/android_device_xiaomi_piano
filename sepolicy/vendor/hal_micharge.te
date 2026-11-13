@@ -14,7 +14,6 @@ hal_client_domain(system_server, hal_micharge)
 
 r_dir_file(hal_micharge_default, vendor_sysfs_battery_supply)
 r_dir_file(hal_micharge_default, vendor_sysfs_qcom_battery)
-r_dir_file(hal_micharge_default, vendor_sysfs_battery_supply)
 r_dir_file(hal_micharge_default, vendor_sysfs_usb_node)
 r_dir_file(hal_micharge_default, vendor_sysfs_usb_supply)
 
@@ -25,7 +24,6 @@ allow hal_micharge_default sysfs:dir { getattr open read search };
 allow hal_micharge_default sysfs:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_battery_supply:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_qcom_battery:file rw_file_perms;
-allow hal_micharge_default vendor_sysfs_battery_supply:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_usb_node:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_usb_supply:file rw_file_perms;
 allow hal_micharge_default vendor_sysfs_xm_power:dir r_dir_perms;

@@ -22,7 +22,6 @@ allow vendor_hal_weaver_default tee_device:chr_file { ioctl open read write };
 allow vendor_sensors vendor_sysfs_displayfeature:file { getattr open };
 
 # Probes that need no access.
-dontaudit hal_hypsys_vendor vendor_default_prop:property_service set;
 dontaudit hal_hypsys_vendor init:unix_stream_socket connectto;
 dontaudit hal_hypsys_vendor property_socket:sock_file write;
 dontaudit hal_mtdservice_default file_contexts_file:file { getattr open read };

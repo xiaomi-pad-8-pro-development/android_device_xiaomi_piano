@@ -39,5 +39,4 @@ allow mi_thermald vendor_sysfs_kgsl:dir r_dir_perms;
 allow mi_thermald vendor_sysfs_kgsl:file rw_file_perms;
 allow mi_thermald vendor_sysfs_kgsl:lnk_file r_file_perms;
 allow mi_thermald vendor_sysfs_qcom_battery:file rw_file_perms;
-allow mi_thermald vendor_sysfs_battery_supply:file rw_file_perms;
 allow mi_thermald vendor_sysfs_xm_power:file rw_file_perms;

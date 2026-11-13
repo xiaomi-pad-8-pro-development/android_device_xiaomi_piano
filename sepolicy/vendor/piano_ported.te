@@ -107,7 +107,6 @@ allow hal_mimd_default hal_mimd_default:capability2 { block_suspend };
 allow hal_mimd_default cgroup:file { ioctl read getattr setattr lock map open watch watch_reads };
 allow hal_mimd_default sysfs_lru_gen_enabled:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_mimd_default hal_mimd_default:capability { chown sys_resource };
-binder_call(hal_mimd_default, servicemanager)
 allow nanoapp_aidl nanoapp_aidl_exec:file { read getattr map execute open entrypoint };
 binder_call(nanoapp_aidl, servicemanager)
 allow nanoapp_aidl system_server:binder { call };
@@ -141,7 +140,6 @@ allow vendor_dtool init:unix_stream_socket { connectto };
 allow vendor_dtool vendor_fp_prop:property_service { set };
 allow vendor_dtool vendor_fp_prop:file { read getattr map open };
 binder_call(vendor_dtool, servicemanager)
-add_service(vendor_dtool, vendor_hal_fingerprint_dtool1_service)
 allow ffu ffu_exec:file { read getattr map execute open entrypoint };
 allow ffu sysfs:dir { ioctl read getattr lock open watch watch_reads search };
 allow ffu sysfs:file { ioctl read getattr lock map open watch watch_reads };
@@ -152,8 +150,6 @@ allow ffu sysfs_memory:lnk_file { ioctl read getattr lock map open watch watch_r
 allow ffu vendor_ffu_prop:property_service { set };
 allow ffu property_socket:sock_file { write };
 allow ffu init:unix_stream_socket { connectto };
-allow ffu vendor_ffu_prop:property_service { set };
-allow ffu vendor_ffu_prop:file { read getattr map open };
 allow ffu vendor_ffu_prop:file { read getattr map open };
 allow ffu sysfs:file { read getattr open };
 allow ffu rootfs:file { execute execute_no_trans };
@@ -173,9 +169,7 @@ allow ffu ffu_data_file:file { ioctl read write create getattr setattr lock appe
 allow ffu ffu_data_file:blk_file { ioctl read write getattr setattr open };
 allow ffu rootfs:lnk_file { getattr setattr };
 allow ffu self:capability { chown fsetid };
-allow ffu property_socket:sock_file { write };
 allow ffu ffu_exec:file { read getattr execute open entrypoint };
-allow ffu init:unix_stream_socket { connectto };
 allow ffu mnt_user_file:dir { search };
 allow ffu mnt_user_file:lnk_file { read };
 allow ffu storage_file:lnk_file { read };
@@ -194,8 +188,6 @@ allow ddr_freq sysfs_devices_system_cpu:lnk_file { ioctl read getattr lock map o
 allow ddr_freq vendor_ddr_freq_prop:property_service { set };
 allow ddr_freq property_socket:sock_file { write };
 allow ddr_freq init:unix_stream_socket { connectto };
-allow ddr_freq vendor_ddr_freq_prop:property_service { set };
-allow ddr_freq vendor_ddr_freq_prop:file { read getattr map open };
 allow ddr_freq vendor_ddr_freq_prop:file { read getattr map open };
 allow ddr_freq sysfs:file { read getattr open };
 allow ddr_freq rootfs:file { execute execute_no_trans };
@@ -216,9 +208,7 @@ allow ddr_freq ddr_freq_data_file:file { ioctl read write create getattr setattr
 allow ddr_freq ddr_freq_data_file:blk_file { ioctl read write getattr setattr open };
 allow ddr_freq rootfs:lnk_file { getattr setattr };
 allow ddr_freq self:capability { chown fsetid };
-allow ddr_freq property_socket:sock_file { write };
 allow ddr_freq ddr_freq_exec:file { read getattr execute open entrypoint };
-allow ddr_freq init:unix_stream_socket { connectto };
 allow ddr_freq mnt_user_file:dir { search };
 allow ddr_freq mnt_user_file:lnk_file { read };
 allow ddr_freq storage_file:lnk_file { read };
@@ -255,21 +245,14 @@ allow hal_fbo_default sysfs_fs_f2fs:file { write getattr lock append map open };
 allow hal_fbo_default sysfs_devices_block:dir { search };
 allow hal_fbo_default sysfs_devices_block:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_fbo_default proc_drop_caches:file { write lock append map open };
-allow hal_fbo_default block_device:dir { search };
 allow hal_fbo_default gsort_block_device:lnk_file { read write open };
 allow hal_fbo_default gsort_block_device:blk_file { read write open };
 allow hal_fbo_default snapshot_prop:file { read getattr map open };
 allow hal_fbo_default property_socket:sock_file { write };
 allow hal_fbo_default init:unix_stream_socket { connectto };
 allow hal_fbo_default snapshot_prop:property_service { set };
-allow hal_fbo_default snapshot_prop:file { read getattr map open };
 allow hal_fbo_default vendor_fbo_prop:file { read getattr map open };
-allow hal_fbo_default property_socket:sock_file { write };
-allow hal_fbo_default init:unix_stream_socket { connectto };
 allow hal_fbo_default vendor_fbo_prop:property_service { set };
-allow hal_fbo_default vendor_fbo_prop:file { read getattr map open };
-allow hal_fbo_default init:unix_stream_socket { connectto };
-allow hal_fbo_default property_socket:sock_file { write };
 allow hal_miperf_default hal_miperf_default_exec:file { read getattr map execute open entrypoint };
 binder_call(hal_miperf_default, servicemanager)
 allow hal_miperf_default mnt_vendor_file:dir { read getattr open search };
@@ -316,7 +299,6 @@ allow hal_batteryantiaging_default batteryantiaging_cache_file:file { ioctl read
 allow hal_batteryantiaging_default vendor_sysfs_xm_power:dir { ioctl read getattr lock open watch watch_reads search };
 allow hal_batteryantiaging_default vendor_sysfs_xm_power:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_batteryantiaging_default vendor_sysfs_xm_power:chr_file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_batteryantiaging_default property_socket:sock_file { write };
 allow hal_batteryantiaging_default init:unix_stream_socket { connectto };
 allow hal_batteryantiaging_default vendor_batteryantiaging_prop:property_service { set };
 allow hal_batteryantiaging_default vendor_batteryantiaging_prop:file { read getattr map open };
@@ -335,10 +317,7 @@ allow hal_videoservice_default vendor_data_file:dir { write add_name search };
 allow hal_videoservice_default vendor_data_file:file { read write create getattr open };
 allow hal_videoservice_default property_socket:sock_file { write };
 allow hal_videoservice_default init:unix_stream_socket { connectto };
-allow hal_videoservice_default property_socket:sock_file { write };
-allow hal_videoservice_default init:unix_stream_socket { connectto };
 allow hal_videoservice_default vendor_video_mi_prop:property_service { set };
-allow hal_videoservice_default vendor_video_mi_prop:file { read getattr map open };
 allow hal_videoservice_default vendor_video_mi_prop:file { read getattr map open };
 allow hal_videoservice_default hal_videoservice_default_exec:file { read getattr map execute open entrypoint };
 binder_call(hal_videoservice_default, servicemanager)
@@ -372,7 +351,6 @@ allow minetd minetd_exec:file { read getattr map execute open entrypoint };
 allow minetd property_socket:sock_file { write };
 allow minetd init:unix_stream_socket { connectto };
 allow minetd vendor_minetd_prop:property_service { set };
-allow minetd vendor_minetd_prop:file { read getattr map open };
 allow minetd vendor_minetd_prop:file { read getattr map open };
 allow minetd self:netlink_generic_socket { read write create getattr bind setopt };
 allow minetd self:netlink_route_socket { nlmsg_write };

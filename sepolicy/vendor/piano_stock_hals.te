@@ -103,7 +103,6 @@ allow hal_camera_default procfs_memory:dir { ioctl read getattr lock open watch 
 allow hal_camera_default procfs_memory:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default property_socket:sock_file { write };
 allow hal_camera_default self:cap2_userns { block_suspend };
-allow hal_camera_default self:capability { fowner ipc_lock };
 allow hal_camera_default self:capability2 { block_suspend };
 allow hal_camera_default self:perf_event { open cpu kernel write };
 allow hal_camera_default self:process { execmem };
