@@ -15,7 +15,6 @@ hal_client_domain(hal_idmanager_default, hal_keymint)
 allow hal_misyscore_default self:capability { fowner };
 allow hal_mtdservice_default mnt_vendor_file:dir { getattr search };
 allow hal_mtdservice_default vendor_persist_data_file:dir { search };
-allow vendor_location_lowi_server vendor_location:fd { use };
 allow vendor_modprobe self:capability { sys_nice };
 allow vendor_modprobe self:key { write };
 userdebug_or_eng(`

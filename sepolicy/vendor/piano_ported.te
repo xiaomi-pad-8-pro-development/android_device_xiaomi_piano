@@ -151,7 +151,6 @@ allow ffu vendor_ffu_prop:property_service { set };
 allow ffu property_socket:sock_file { write };
 allow ffu init:unix_stream_socket { connectto };
 allow ffu vendor_ffu_prop:file { read getattr map open };
-allow ffu sysfs:file { read getattr open };
 allow ffu rootfs:file { execute execute_no_trans };
 allow ffu vendor_file:file { execute_no_trans };
 allow ffu metadata_file:file { getattr };
@@ -168,8 +167,6 @@ allow ffu ffu_data_file:dir { ioctl read write create getattr setattr lock renam
 allow ffu ffu_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
 allow ffu ffu_data_file:blk_file { ioctl read write getattr setattr open };
 allow ffu rootfs:lnk_file { getattr setattr };
-allow ffu self:capability { chown fsetid };
-allow ffu ffu_exec:file { read getattr execute open entrypoint };
 allow ffu mnt_user_file:dir { search };
 allow ffu mnt_user_file:lnk_file { read };
 allow ffu storage_file:lnk_file { read };
@@ -189,7 +186,6 @@ allow ddr_freq vendor_ddr_freq_prop:property_service { set };
 allow ddr_freq property_socket:sock_file { write };
 allow ddr_freq init:unix_stream_socket { connectto };
 allow ddr_freq vendor_ddr_freq_prop:file { read getattr map open };
-allow ddr_freq sysfs:file { read getattr open };
 allow ddr_freq rootfs:file { execute execute_no_trans };
 allow ddr_freq vendor_file:file { read execute_no_trans };
 allow ddr_freq vendor_file:dir { read };
@@ -207,8 +203,6 @@ allow ddr_freq ddr_freq_data_file:dir { ioctl read write create getattr setattr 
 allow ddr_freq ddr_freq_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
 allow ddr_freq ddr_freq_data_file:blk_file { ioctl read write getattr setattr open };
 allow ddr_freq rootfs:lnk_file { getattr setattr };
-allow ddr_freq self:capability { chown fsetid };
-allow ddr_freq ddr_freq_exec:file { read getattr execute open entrypoint };
 allow ddr_freq mnt_user_file:dir { search };
 allow ddr_freq mnt_user_file:lnk_file { read };
 allow ddr_freq storage_file:lnk_file { read };
@@ -334,7 +328,6 @@ allow hal_miwillservice_default vendor_miwild_prop:file { read getattr map open 
 allow hal_miwillservice_default miwild_socket:sock_file { read write getattr unlink };
 allow hal_miwillservice_default miwild:unix_stream_socket { connectto };
 allow hal_miwillservice_default socket_device:sock_file { write };
-allow hal_miwillservice_default vendor_miwild_prop:file { read };
 allow hal_miwillservice_default minetd:unix_stream_socket { connectto };
 allow hal_minetaidlservice_default hal_minetaidlservice_default_exec:file { read getattr map execute open entrypoint };
 allow hal_minetaidlservice_default property_socket:sock_file { write };
@@ -344,7 +337,6 @@ allow hal_minetaidlservice_default vendor_minetd_prop:file { read getattr map op
 allow hal_minetaidlservice_default minetd_socket:sock_file { read write getattr unlink };
 allow hal_minetaidlservice_default minetd:unix_stream_socket { connectto };
 allow hal_minetaidlservice_default socket_device:sock_file { write };
-allow hal_minetaidlservice_default vendor_minetd_prop:file { read };
 allow hal_minetaidlservice_default system_app:binder { call };
 allow hal_minetaidlservice_default system_server:binder { call };
 allow minetd minetd_exec:file { read getattr map execute open entrypoint };
@@ -369,7 +361,6 @@ type_transition hal_minetaidlservice_default vendor_shell_exec:process hal_minet
 allow minetd vendor_wlan_chip_prop:file { read getattr map open };
 allow minetd self:capability { net_raw };
 allow minetd self:packet_socket { read create bind setopt shutdown };
-allow minetd vendor_wlan_chip_prop:file { read getattr open };
 
 # Battery anti-aging writes charge limits through the smart charge
 # device.

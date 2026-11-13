@@ -17,7 +17,6 @@ allow hal_audio_default hal_sensors_default:unix_stream_socket { connectto };
 allow hal_audio_default init:unix_stream_socket { connectto };
 allow hal_audio_default kernel:system { syslog_read };
 allow hal_audio_default mnt_vendor_file:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_audio_default mnt_vendor_file:dir { search };
 allow hal_audio_default proc_sysrq:file { write open };
 allow hal_audio_default property_socket:sock_file { write };
 allow hal_audio_default self:cap_userns { sys_nice };
@@ -38,8 +37,6 @@ allow hal_audio_default vendor_persist_audio_file:dir { ioctl read write getattr
 allow hal_audio_default vendor_persist_audio_file:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_audio_default vendor_persist_audio_file:file { ioctl read write create getattr lock append map open watch watch_reads };
 allow hal_audio_default vendor_persist_audio_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow hal_audio_default vendor_persist_sensors_file:dir { read write open search };
-allow hal_audio_default vendor_persist_sensors_file:file { read open };
 binder_call(hal_audio_default, vendor_qccvendor)
 allow hal_audio_default vendor_qccvendor:fd { use };
 allow hal_audio_default vendor_qtrsdkservice_service:service_manager { find };
@@ -59,10 +56,8 @@ binder_call(hal_audio_default, vndservicemanager)
 allow hal_camera_default aidlintentaware_service:service_manager { add find };
 allow hal_camera_default camera_config_prop:file { read getattr map open };
 allow hal_camera_default camera_persist_file:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_camera_default camera_persist_file:dir { search };
 allow hal_camera_default camera_persist_file:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default camera_persist_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow hal_camera_default camlog_device:chr_file { ioctl read write open };
 allow hal_camera_default debugfs_tracing:file { read append open };
 allow hal_camera_default debugfs_tracing:file { read write getattr open };
 allow hal_camera_default device_config_camera_native_prop:file { read getattr map open };
@@ -77,7 +72,6 @@ allow hal_camera_default graphics_config_writable_prop:file { read getattr map o
 binder_call(hal_camera_default, hal_camera_default)
 allow hal_camera_default hal_camera_default:fd { use };
 allow hal_camera_default hal_camera_default_exec:file { read getattr map execute open entrypoint };
-allow hal_camera_default hal_dynamic_camera_service:service_manager { find };
 allow hal_camera_default hal_graphics_allocator_default_tmpfs:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager { find };
 allow hal_camera_default hal_system_suspend_service:service_manager { find };
@@ -89,7 +83,6 @@ allow hal_camera_default kernel:system { syslog_read };
 allow hal_camera_default kmsg_device:chr_file { read getattr open };
 allow hal_camera_default migt_dev:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_camera_default mnt_vendor_file:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_camera_default mnt_vendor_file:dir { search };
 allow hal_camera_default mnt_vendor_file:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default mnt_vendor_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default permission_service:service_manager { find };
@@ -98,7 +91,6 @@ allow hal_camera_default platform_app:fd { use };
 allow hal_camera_default proc_meminfo:file { read getattr open };
 allow hal_camera_default proc_pressure_cpu:file { read write getattr open };
 allow hal_camera_default proc_pressure_io:file { read write getattr open };
-allow hal_camera_default proc_pressure_mem:file { read write getattr open };
 allow hal_camera_default procfs_memory:dir { ioctl read getattr lock open watch watch_reads search };
 allow hal_camera_default procfs_memory:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default property_socket:sock_file { write };
@@ -113,12 +105,7 @@ allow hal_camera_default sys_thermal_torch_real_level:file { write getattr };
 allow hal_camera_default sys_thermal_torch_real_level:file { write lock append map open };
 allow hal_camera_default sysfs:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default sysfs:file { read write open };
-allow hal_camera_default sysfs_csiphy_umd_paras:file { read write open };
-allow hal_camera_default sysfs_migt:dir { search };
-allow hal_camera_default sysfs_migt:file { read write getattr open };
-allow hal_camera_default sysfs_poweraware:file { read getattr open };
 allow hal_camera_default sysfs_wake_lock:file { ioctl read write getattr lock append map open watch watch_reads };
-allow hal_camera_default sysfs_wake_lock:file { read write open };
 binder_call(hal_camera_default, system_app)
 allow hal_camera_default system_app:fd { use };
 binder_call(hal_camera_default, system_server)
@@ -128,15 +115,11 @@ binder_call(hal_camera_default, system_suspend_server)
 allow hal_camera_default system_suspend_server:fd { use };
 allow hal_camera_default tee_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_camera_default tmpfs:file { read write getattr };
-allow hal_camera_default vendor_bsp_data_log_file:dir { read write create open add_name search };
 allow hal_camera_default vendor_bsp_data_log_file:file { read write create getattr setattr append open };
-allow hal_camera_default vendor_camera_data_file:sock_file { read write create getattr setattr unlink open };
-allow hal_camera_default vendor_camera_data_file:sock_file { read write create getattr setattr unlink };
 allow hal_camera_default vendor_camera_p3enable_prop:file { read getattr map open };
 allow hal_camera_default vendor_camera_p3enable_prop:property_service { set };
 allow hal_camera_default vendor_camera_xdrversion_prop:file { read getattr map open };
 allow hal_camera_default vendor_camera_xdrversion_prop:property_service { set };
-allow hal_camera_default vendor_displayfeature_device:chr_file { ioctl read open };
 allow hal_camera_default vendor_dmabuf_display_heap_device:chr_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_dmabuf_qseecom_heap_device:chr_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_dmabuf_qseecom_ta_heap_device:chr_file { ioctl read getattr lock map open watch watch_reads };
@@ -144,7 +127,6 @@ allow hal_camera_default vendor_dmabuf_system_heap_device:chr_file { ioctl read 
 allow hal_camera_default vendor_dmabuf_user_contig_heap_device:chr_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_membuf_dev:chr_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_persist_sensors_file:dir { ioctl read getattr lock open watch watch_reads search };
-allow hal_camera_default vendor_persist_sensors_file:dir { search };
 allow hal_camera_default vendor_persist_sensors_file:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_persist_sensors_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_qdsp_device:chr_file { ioctl read getattr lock map open watch watch_reads };
@@ -156,7 +138,6 @@ allow hal_camera_default vendor_sysfs_battery_supply:dir { search };
 allow hal_camera_default vendor_sysfs_battery_supply:file { getattr };
 allow hal_camera_default vendor_sysfs_battery_supply:file { open };
 allow hal_camera_default vendor_sysfs_battery_supply:file { read getattr open };
-allow hal_camera_default vendor_sysfs_battery_supply:file { read };
 allow hal_camera_default vendor_sysfs_camera:file { ioctl read getattr lock map open watch watch_reads };
 allow hal_camera_default vendor_sysfs_camera:file { write lock append map open };
 allow hal_camera_default vendor_sysfs_graphics:dir { ioctl read getattr lock open watch watch_reads search };
