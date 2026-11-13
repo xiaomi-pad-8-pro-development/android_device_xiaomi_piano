@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The keyboard cover driver registers an alphabetic keyboard even when
-         no cover is attached, so keep the on-screen keyboard available. -->
+    <!-- Keep the on-screen keyboard available while the keyboard cover is
+         attached, for when its keys are ignored (folded behind the tablet or
+         in tent position). The cover's input devices only exist while it is
+         attached. -->
     <bool name="def_show_ime_with_hard_keyboard">true</bool>
 
     <!-- Tablet: follow the accelerometer by default so landscape works out of
