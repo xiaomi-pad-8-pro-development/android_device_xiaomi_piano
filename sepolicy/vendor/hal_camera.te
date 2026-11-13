@@ -49,3 +49,6 @@ allow hal_camera_server vendor_sysfs_xm_power:file rw_file_perms;
 # stock camera provider in addition to using cameraserver.
 binder_call(hal_camera_default, platform_app_all)
 binder_call(platform_app_all, hal_camera_default)
+
+# The camera HAL reads cpu.shares to set its thread priorities.
+allow hal_camera_default cgroup:file r_file_perms;
