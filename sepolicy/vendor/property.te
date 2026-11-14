@@ -50,3 +50,4 @@ vendor_public_prop(vendor_security_devauth_keyboard_connected_prop)
 # Stock MiDevAuth writes this vendor status from a system_ext app. Mark
 # only this cross-partition property as a core extension; retain vendor ownership.
 typeattribute vendor_security_devauth_keyboard_connected_prop extended_core_property_type;
+vendor_restricted_prop(vendor_piano_free_pps_prop)

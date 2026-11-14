@@ -254,6 +254,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.xiaomi.rc \
     piano-body-color.sh \
+    piano-free-pps.sh \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \

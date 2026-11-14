@@ -84,3 +84,15 @@ on boot
     # TCP buffer sizes from the stock minetd init script.
     write /proc/sys/net/ipv4/tcp_rmem "524288 1048576 16777216"
     write /proc/sys/net/ipv4/tcp_wmem "262144 524288 16777216"
+
+service piano-free-pps /vendor/bin/piano-free-pps.sh
+    class late_start
+    user root
+    group system
+    disabled
+
+on property:sys.boot_completed=1
+    start piano-free-pps
+
+on property:persist.vendor.piano.free_pps=1
+    start piano-free-pps

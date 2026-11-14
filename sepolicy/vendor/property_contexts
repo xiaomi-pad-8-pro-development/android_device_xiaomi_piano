@@ -273,3 +273,4 @@ vendor.devauth.keyboard_connected u:object_r:vendor_security_devauth_keyboard_co
 
 # Keyboard cover authentication status, set by midevauthd.
 persist.vendor.sys.devauth u:object_r:vendor_payment_security_prop:s0
+persist.vendor.piano.free_pps u:object_r:vendor_piano_free_pps_prop:s0 exact int

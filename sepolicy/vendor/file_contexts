@@ -248,3 +248,4 @@
 
 # Keyboard cover authentication
 /(odm|vendor/odm)/bin/midevauthd u:object_r:hal_midevauth_default_exec:s0
+/vendor/bin/piano-free-pps\.sh u:object_r:piano_free_pps_exec:s0

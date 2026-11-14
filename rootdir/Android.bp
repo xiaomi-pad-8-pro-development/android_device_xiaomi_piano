@@ -185,3 +185,9 @@ prebuilt_etc {
     sub_dir: "init",
     vendor: true,
 }
+
+sh_binary {
+    name: "piano-free-pps.sh",
+    src: "bin/piano-free-pps.sh",
+    vendor: true,
+}

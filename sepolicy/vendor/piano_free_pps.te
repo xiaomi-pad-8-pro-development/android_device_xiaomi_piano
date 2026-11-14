@@ -1,0 +1,10 @@
+# Marks third-party PD chargers as verified so the ADSP allows full-rate PPS.
+type piano_free_pps, domain;
+type piano_free_pps_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(piano_free_pps)
+allow piano_free_pps vendor_shell_exec:file rx_file_perms;
+allow piano_free_pps vendor_toolbox_exec:file rx_file_perms;
+r_dir_file(piano_free_pps, sysfs)
+allow piano_free_pps vendor_sysfs_battery_supply:dir r_dir_perms;
+allow piano_free_pps vendor_sysfs_battery_supply:file rw_file_perms;
+get_prop(piano_free_pps, vendor_piano_free_pps_prop)
