@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# Xiaomi Focus Pen, mapped like HyperOS (MIUIInput.kl).
+
+# Laser pointer
+key 189   BUTTON_6

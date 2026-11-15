@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Xiaomi Focus Pen Pro touch film, mapped like HyperOS (MIUIInput.kl).
+
+# Pinch (squeeze)
+key 189   BUTTON_7
+# Double press
+key 96    BUTTON_8
+# Slide up
+key 73    BUTTON_9
+# Slide down
+key 81    BUTTON_10
