@@ -11,10 +11,12 @@ B=/sys/class/qcom-battery
 P=/sys/class/power_supply/battery
 TAG=piano-free-pps
 
-# Charge current in mA, positive while charging (current_now is negative then).
+# Charge current in mA. The sign of current_now differs between kernels,
+# so use its size; the trial only runs while a charger is connected.
 ma() {
     c=$(cat $P/current_now 2>/dev/null)
-    echo $(( -${c:-0} / 1000 ))
+    c=${c:-0}
+    echo $(( ${c#-} / 1000 ))
 }
 
 state=idle
