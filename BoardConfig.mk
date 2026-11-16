@@ -86,7 +86,7 @@ BOARD_BOOTCONFIG := \
     androidboot.load_modules_parallel=false \
     androidboot.hypervisor.protected_vm.supported=0 \
     androidboot.vendor.qspa=true \
-    androidboot.init_fatal_reboot_target=recovery
+    androidboot.init_fatal_reboot_target=bootloader
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_FRAGMENTS := dlkm
