@@ -5,6 +5,7 @@
 #
 
 import hashlib
+import re
 import sys
 from pathlib import Path
 
@@ -54,6 +55,41 @@ def camera_libui_runpath(ctx, file, file_path, *args, **kwargs):
     run_cmd([patchelf_version_path_map[DEFAULT_PATCHELF_VERSION],
              '--set-rpath', '/vendor/lib64/camera', file_path])
 
+MIXER_OVERLAY = 'odm/etc/audio/sku_sun/mixer_paths_overlay_static.xml'
+stock_dump = Path('.')
+
+_MIXER_PATH = r'(?ms)^[ \t]*<path name="{}">\n(.*?)^[ \t]*</path>'
+_XML_COMMENT = re.compile(r'(?s)<!--.*?-->')
+
+
+def merge_mixer_paths(base: str, overlay: str) -> tuple[str, int, int]:
+    # Stock libaudioroute_ext loads the static overlay alongside the common
+    # mixer_paths and uses each overlay path in place of the common one.
+    # Source PAL reads only mixer_paths_<card>.xml, so fold it in here.
+    # Blank comments (keeping offsets) so commented-out paths never match.
+    blank = lambda t: _XML_COMMENT.sub(lambda c: ' ' * len(c.group(0)), t)
+    replaced = added = 0
+    for m in re.finditer(_MIXER_PATH.format('([^"]+)'), blank(overlay)):
+        name, body = m.group(1), overlay[m.start(2):m.end(2)]
+        s = re.search(_MIXER_PATH.format(re.escape(name)), blank(base))
+        if s:
+            base = base[:s.start(1)] + body + base[s.end(1):]
+            replaced += 1
+        else:
+            base = base.replace('</mixer>', f'    <path name="{name}">\n{body}    </path>\n\n</mixer>', 1)
+            added += 1
+    return base, replaced, added
+
+
+def mixer_paths_overlay(ctx, file, file_path, *args, **kwargs):
+    overlay = (stock_dump / MIXER_OVERLAY).read_text(encoding='iso-8859-1')
+    with open(file_path, encoding='iso-8859-1', newline='') as f:
+        base = f.read()
+    base, _, _ = merge_mixer_paths(base, overlay)
+    with open(file_path, 'w', encoding='iso-8859-1', newline='') as f:
+        f.write(base)
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
@@ -98,6 +134,10 @@ blob_fixups: blob_fixups_user_type = {
             r'(service set_diag_state [^\n]*\n)',
             r'\1    user root\n'
         ),
+    (
+        'odm/etc/audio/sku_sun/mixer_paths_sun_mtp.xml',
+        'vendor/etc/audio/sku_sun/mixer_paths_sun_mtp.xml',
+    ): blob_fixup().call(mixer_paths_overlay, need_tmp_dir=False),
     'vendor/etc/display/DPU12__.xml': blob_fixup()
         .regex_replace(r'<Param9>1.05</Param9>', '<Param9>1.04</Param9>'),
     'vendor/etc/init/nicmd.rc': blob_fixup()
@@ -365,6 +405,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 2 or not Path(sys.argv[1]).is_dir():
         raise SystemExit('Supply exactly one offline OS4.0.6.0.XPYCNXM dump directory')
     source = Path(sys.argv[1])
+    stock_dump = source
     for line in Path(__file__).with_name('proprietary-files.txt').read_text().splitlines():
         if not line or line.startswith('#'):
             continue
