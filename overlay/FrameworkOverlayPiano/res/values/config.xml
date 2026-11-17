@@ -207,4 +207,14 @@
          Settings.System.RING_VIBRATION_INTENSITY more details on the constant values and
          meanings. -->
     <integer name="config_defaultRingVibrationIntensity">3</integer>
+
+    <!-- The side fingerprint sensor is the power key, on the top edge near
+         the top-right corner in the natural (portrait) orientation:
+         display id (empty for the default display), x, y, radius in pixels. -->
+    <string-array name="config_sfps_sensor_props" translatable="false">
+        <item></item>
+        <item>1850</item>
+        <item>0</item>
+        <item>130</item>
+    </string-array>
 </resources>
