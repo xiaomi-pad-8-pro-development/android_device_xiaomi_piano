@@ -229,26 +229,27 @@ volume index from 0 to 100.
             <point>66,-2800</point>
             <point>100,-1050</point>
         </volume>
+        <!-- Louder in the middle than the Xiaomi curve, which relies on the
+             Xiaomi volume boost we do not have. Capped at -3 dB so the
+             FourSemi amps do not clip at full volume. -->
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER">
-            <point>0,-75800</point>
-            <point>1,-7317</point>
-            <point>2,-6450</point>
-            <point>7,-5730</point>
-            <point>13,-5097</point>
-            <point>20,-4566</point>
-            <point>27,-4008</point>
-            <point>33,-3830</point>
-            <point>40,-3196</point>
-            <point>47,-2705</point>
-            <point>52,-2590</point>
-            <point>59,-2329</point>
-            <point>65,-2002</point>
-            <point>72,-1894</point>
-            <point>79,-1660</point>
-            <point>86,-1460</point>
-            <point>92,-1290</point>
-            <point>99,-1160</point>
-            <point>100,-30</point>
+            <point>0,-9600</point>
+            <point>1,-4800</point>
+            <point>7,-4000</point>
+            <point>13,-3400</point>
+            <point>20,-2900</point>
+            <point>27,-2500</point>
+            <point>33,-2150</point>
+            <point>40,-1800</point>
+            <point>47,-1500</point>
+            <point>53,-1250</point>
+            <point>60,-1000</point>
+            <point>66,-800</point>
+            <point>73,-600</point>
+            <point>80,-450</point>
+            <point>87,-350</point>
+            <point>93,-300</point>
+            <point>100,-300</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_USB_CE">
             <point>1,-6550</point>
